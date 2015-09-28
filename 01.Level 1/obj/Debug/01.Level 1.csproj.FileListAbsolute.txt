@@ -1,0 +1,6 @@
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\01.Level 1\bin\Debug\01.Level 1.exe.config
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\01.Level 1\bin\Debug\01.Level 1.exe
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\01.Level 1\bin\Debug\01.Level 1.pdb
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\01.Level 1\obj\Debug\01.Level 1.csprojResolveAssemblyReference.cache
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\01.Level 1\obj\Debug\01.Level 1.exe
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\01.Level 1\obj\Debug\01.Level 1.pdb
