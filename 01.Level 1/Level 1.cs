@@ -36,13 +36,19 @@ class Program
             PrintSymbol(x, 48, '*', ConsoleColor.Gray, ConsoleColor.DarkGray);
         }
 
-
         for (int y = 4; y < 48; y++)
         {
             PrintSymbol(60, y, '*', ConsoleColor.Gray, ConsoleColor.DarkGray);
             PrintSymbol(0, y, '*', ConsoleColor.Gray, ConsoleColor.DarkGray);
             PrintSymbol(99, y, '*', ConsoleColor.Gray, ConsoleColor.DarkGray);
         }
+
+        for (int x = 61; x < 99; x++)
+        {
+            PrintSymbol(x, 35, '*', ConsoleColor.Gray, ConsoleColor.DarkGray);
+        }
+
+        PrintString(75, 37, "INVENTORY", ConsoleColor.Yellow, ConsoleColor.Black);
     }
 
     static void PrintSymbol(int x, int y, char symbol, ConsoleColor color, ConsoleColor backColor)
@@ -67,7 +73,7 @@ class Program
         Console.BufferHeight = Console.WindowHeight = 50;
         Console.BufferWidth = Console.WindowWidth = 100;
 
-        //Start Screen
+        ////Start Screen
         FrontScreen();
         Console.SetCursorPosition(66, Console.WindowHeight / 3 + 20);
 
@@ -78,7 +84,7 @@ class Program
             cki = Console.ReadKey();
         } while (cki.Key != ConsoleKey.Enter);
 
-        PrintString(35, Console.WindowHeight / 3 + 25, "Enter your nickname:", ConsoleColor.White, ConsoleColor.Black);
+        PrintString(35, Console.WindowHeight / 3 + 25, "Enter your name:", ConsoleColor.White, ConsoleColor.Black);
         Console.SetCursorPosition(56, Console.WindowHeight / 3 + 25);
 
         string nickname = Console.ReadLine();
@@ -87,7 +93,10 @@ class Program
 
         //Level 1
         GameFrame();
-        Console.SetCursorPosition(66, Console.WindowHeight / 3 + 20);
+        PrintString(3, 1, "Oh dear, " + nickname + "! You are a great warrior that is prisoned in the castle of the dragon Mardocar."
+            , ConsoleColor.DarkYellow, ConsoleColor.Black);
+
+        Console.SetCursorPosition(3, 2);
     }
 }
 
