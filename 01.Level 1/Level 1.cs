@@ -24,8 +24,14 @@ class Program
         PrintString(22, Console.WindowHeight / 3 + 11, @"| (_) |  _| / /\/\ \ (_| | | | (_| | (_) | (_| (_| | |   ", ConsoleColor.Red, ConsoleColor.Black);
         PrintString(22, Console.WindowHeight / 3 + 12, @" \___/|_|   \/    \/\__,_|_|  \__,_|\___/ \___\__,_|_|   ", ConsoleColor.Red, ConsoleColor.Black);
 
+        PrintString(35, Console.WindowHeight / 3 + 17, "PRESS ENTER TO START THE GAME!", ConsoleColor.White, ConsoleColor.Black);
 
-        PrintString(35, Console.WindowHeight / 3 + 20, "PRESS ENTER TO START THE GAME!", ConsoleColor.White, ConsoleColor.Black);
+        PrintString(0, Console.WindowHeight - 5, @"      _______         _______         _______         _______         _______         _______      ", ConsoleColor.Yellow, ConsoleColor.Black);
+        PrintString(0, Console.WindowHeight - 4, @"     |___|___|       |___|___|       |___|___|       |___|___|       |___|___|       |___|___|     ", ConsoleColor.Yellow, ConsoleColor.Black);
+        PrintString(0, Console.WindowHeight - 3, @"_____|_|___|_|_______|_|___|_|_______|_|___|_|_______|_|___|_|_______|_|___|_|_______|_|___|_|_____", ConsoleColor.Yellow, ConsoleColor.Black);
+        PrintString(0, Console.WindowHeight - 2, @"_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|_", ConsoleColor.Yellow, ConsoleColor.Black);
+        PrintString(0, Console.WindowHeight - 1, @"___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___", ConsoleColor.Yellow, ConsoleColor.Black);
+        Console.SetCursorPosition(66, Console.WindowHeight / 3 + 16);
     }
 
     static void GameFrame()
@@ -149,13 +155,12 @@ class Program
 
         //Start Screen
         FrontScreen();
-        Console.SetCursorPosition(66, Console.WindowHeight / 3 + 20);
 
         //Clears console after enter pressed - TO BE CHANGED TO ANY KEY PRESSED?
         PressEnter();
 
-        PrintString(35, Console.WindowHeight / 3 + 25, "Enter your name:", ConsoleColor.White, ConsoleColor.Black);
-        Console.SetCursorPosition(52, Console.WindowHeight / 3 + 25);
+        PrintString(35, Console.WindowHeight / 3 + 19, "Enter your name:", ConsoleColor.White, ConsoleColor.Black);
+        Console.SetCursorPosition(52, Console.WindowHeight / 3 + 19);
 
         string nickname = Console.ReadLine();
 
