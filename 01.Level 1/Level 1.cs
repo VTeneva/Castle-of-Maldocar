@@ -68,22 +68,22 @@ class Program
         Console.BufferWidth = Console.WindowWidth = 100;
 
         //Start Screen
-        //FrontScreen();
-        //Console.SetCursorPosition(66, Console.WindowHeight / 3 + 20);
+        FrontScreen();
+        Console.SetCursorPosition(66, Console.WindowHeight / 3 + 20);
 
-        ////Clears console after enter pressed - TO BE CHANGED TO ANY KEY PRESSED?
-        //ConsoleKeyInfo cki;
-        //do
-        //{
-        //    cki = Console.ReadKey();
-        //} while (cki.Key != ConsoleKey.Enter);
+        //Clears console after enter pressed - TO BE CHANGED TO ANY KEY PRESSED?
+        ConsoleKeyInfo cki;
+        do
+        {
+            cki = Console.ReadKey();
+        } while (cki.Key != ConsoleKey.Enter);
 
-        //PrintString(35, Console.WindowHeight / 3 + 25, "Enter your nickname:", ConsoleColor.White, ConsoleColor.Black);
-        //Console.SetCursorPosition(56, Console.WindowHeight / 3 + 25);
+        PrintString(35, Console.WindowHeight / 3 + 25, "Enter your nickname:", ConsoleColor.White, ConsoleColor.Black);
+        Console.SetCursorPosition(56, Console.WindowHeight / 3 + 25);
 
-        //string nickname = Console.ReadLine();
+        string nickname = Console.ReadLine();
 
-        //Console.Clear();
+        Console.Clear();
 
         //Level 1
         GameFrame();

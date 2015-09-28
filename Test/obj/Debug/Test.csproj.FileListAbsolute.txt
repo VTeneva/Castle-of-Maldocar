@@ -1,5 +1,0 @@
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Test\bin\Debug\Test.exe.config
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Test\bin\Debug\Test.exe
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Test\bin\Debug\Test.pdb
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Test\obj\Debug\Test.exe
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Test\obj\Debug\Test.pdb
