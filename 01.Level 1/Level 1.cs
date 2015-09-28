@@ -38,8 +38,8 @@ class Program
 
         for (int y = 4; y < 48; y++)
         {
-            PrintSymbol(60, y, '*', ConsoleColor.Gray, ConsoleColor.DarkGray);
             PrintSymbol(0, y, '*', ConsoleColor.Gray, ConsoleColor.DarkGray);
+            PrintSymbol(61, y, '*', ConsoleColor.Gray, ConsoleColor.DarkGray);
             PrintSymbol(99, y, '*', ConsoleColor.Gray, ConsoleColor.DarkGray);
         }
 
@@ -49,6 +49,70 @@ class Program
         }
 
         PrintString(75, 37, "INVENTORY", ConsoleColor.Yellow, ConsoleColor.Black);
+    }
+
+    static void FirstLevel()
+    {
+        for (int x = 2; x < 60; x++)
+        {
+            if ((x / 2) % 2 == 1)
+            {
+                PrintSymbol(x, 6, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                PrintSymbol(x, 46, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+            }
+            PrintSymbol(x, 7, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+            PrintSymbol(x, 45, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+        }
+
+        for (int x = 4; x < 58; x++)
+        {
+            PrintSymbol(x, 8, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+            PrintSymbol(x, 44, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+        }
+
+        for (int y = 8; y < 45; y++)
+        {
+            if ((y / 2) % 2 == 1)
+            {
+                PrintSymbol(2, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                PrintSymbol(3, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                PrintSymbol(58, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                PrintSymbol(59, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+            }
+        }
+
+        for (int y = 9; y < 44; y++)
+        {
+            PrintSymbol(4, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+            PrintSymbol(5, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+            PrintSymbol(56, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+            PrintSymbol(57, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+        }
+    }
+
+    static void SecondLevel()
+    {
+        for (int x = 2; x < 60; x++)
+        {
+            PrintSymbol(x, 6, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(x, 7, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(x, 8, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(x, 44, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(x, 45, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(x, 46, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+        }
+
+        for (int y = 8; y < 45; y++)
+        {
+            PrintSymbol(2, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(3, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(4, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(5, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(56, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(57, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(58, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(59, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+        }
     }
 
     static void PrintSymbol(int x, int y, char symbol, ConsoleColor color, ConsoleColor backColor)
@@ -67,25 +131,31 @@ class Program
         Console.WriteLine(textOrSequnce);
     }
 
+    static void PressEnter()
+    {
+        ConsoleKeyInfo cki;
+        do
+        {
+            cki = Console.ReadKey();
+        } while (cki.Key != ConsoleKey.Enter);
+    }
+
+
     static void Main()
     {
         // Setting window size
         Console.BufferHeight = Console.WindowHeight = 50;
         Console.BufferWidth = Console.WindowWidth = 100;
 
-        ////Start Screen
+        //Start Screen
         FrontScreen();
         Console.SetCursorPosition(66, Console.WindowHeight / 3 + 20);
 
         //Clears console after enter pressed - TO BE CHANGED TO ANY KEY PRESSED?
-        ConsoleKeyInfo cki;
-        do
-        {
-            cki = Console.ReadKey();
-        } while (cki.Key != ConsoleKey.Enter);
+        PressEnter();
 
         PrintString(35, Console.WindowHeight / 3 + 25, "Enter your name:", ConsoleColor.White, ConsoleColor.Black);
-        Console.SetCursorPosition(56, Console.WindowHeight / 3 + 25);
+        Console.SetCursorPosition(52, Console.WindowHeight / 3 + 25);
 
         string nickname = Console.ReadLine();
 
@@ -96,6 +166,26 @@ class Program
         PrintString(3, 1, "Oh dear, " + nickname + "! You are a great warrior that is prisoned in the castle of the dragon Mardocar."
             , ConsoleColor.DarkYellow, ConsoleColor.Black);
 
+        Console.SetCursorPosition(3, 2);
+        PressEnter();
+
+        FirstLevel();
+        Console.SetCursorPosition(3, 2);
+
+        PressEnter();
+        PrintString(75, 10, "END LEVEL 1.", ConsoleColor.Red, ConsoleColor.Black);
+        PressEnter();
+
+        //Level 2
+        Console.Clear();
+        GameFrame();
+        PrintString(3, 1, "Good job, " + nickname + "! You managed to escape from the tower. ."
+            , ConsoleColor.DarkYellow, ConsoleColor.Black);
+
+        Console.SetCursorPosition(3, 2);
+        PressEnter();
+
+        SecondLevel();
         Console.SetCursorPosition(3, 2);
     }
 }
