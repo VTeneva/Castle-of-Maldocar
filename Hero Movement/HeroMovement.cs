@@ -8,15 +8,15 @@ class Program
 
     static void Main()
     {
-        Console.SetWindowSize(70, 50);
+        Console.BufferHeight = Console.WindowHeight = 50;
+        Console.BufferWidth = Console.WindowWidth = 100;
         Console.CursorVisible = false;
         ConsoleKeyInfo keyInfo;
         currentHeroCoords.Add("col", 10);  //from Hero/Level class
         currentHeroCoords.Add("row", 10);  //from Hero/Level class
 
-        PrintString(0, 0, "Press ESC to EXIT.", ConsoleColor.White, ConsoleColor.Gray);
+        PrintGameFrame();
 
-        PrintEnv();
         PrintHero(currentHeroCoords);
 
         while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Escape)
@@ -42,7 +42,6 @@ class Program
             }
             PrintHero(currentHeroCoords);
         }
-
     }
 
     private static void PrintHero(Dictionary<string, int> currentHeroCoords)
@@ -90,37 +89,37 @@ class Program
         }
     }
 
-    static void PrintEnv()
+    static void PrintGameFrame()
     {
         // Frame of hero's movements
-        for (int x = 1; x < 51; x++)
+        for (int x = 4; x < 58; x++)
         {
-            PrintSymbol(x, 2, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-            PrintSymbol(x, 40, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(x, 8, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(x, 47, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
 
             Dictionary<string, int> currentCoord1 = new Dictionary<string, int>();
             currentCoord1.Add("col", x);
-            currentCoord1.Add("row", 2);
+            currentCoord1.Add("row", 8);
             forbiddenCoords.Add(currentCoord1);
 
             Dictionary<string, int> currentCoord2 = new Dictionary<string, int>();
             currentCoord2.Add("col", x);
-            currentCoord2.Add("row", 40);
+            currentCoord2.Add("row", 47);
             forbiddenCoords.Add(currentCoord2);
         }
 
-        for (int y = 3; y < 40; y++)
+        for (int y = 9; y < 47; y++)
         {
-            PrintSymbol(1, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-            PrintSymbol(50, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(4, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+            PrintSymbol(57, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
 
             Dictionary<string, int> currentCoord1 = new Dictionary<string, int>();
-            currentCoord1.Add("col", 1);
+            currentCoord1.Add("col", 4);
             currentCoord1.Add("row", y);
             forbiddenCoords.Add(currentCoord1);
 
             Dictionary<string, int> currentCoord2 = new Dictionary<string, int>();
-            currentCoord2.Add("col", 50);
+            currentCoord2.Add("col", 57);
             currentCoord2.Add("row", y);
             forbiddenCoords.Add(currentCoord2);
         }
