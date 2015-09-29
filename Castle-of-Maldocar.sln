@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory", "Inventory\Inve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Game Frame", "01.Game Frame\01.Game Frame.csproj", "{73C7AD20-6B82-42EB-B687-40A65E7B46BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameChracters", "GameChracters\GameChracters.csproj", "{8CFFEF17-0086-426F-B858-145A6BFF83DA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{73C7AD20-6B82-42EB-B687-40A65E7B46BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73C7AD20-6B82-42EB-B687-40A65E7B46BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73C7AD20-6B82-42EB-B687-40A65E7B46BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8CFFEF17-0086-426F-B858-145A6BFF83DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CFFEF17-0086-426F-B858-145A6BFF83DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CFFEF17-0086-426F-B858-145A6BFF83DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CFFEF17-0086-426F-B858-145A6BFF83DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

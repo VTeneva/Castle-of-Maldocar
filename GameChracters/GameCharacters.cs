@@ -1,15 +1,17 @@
 ﻿using System;
 
-class GameCharacters
+public class GameCharacters
 {
 
-    static void Main()
+    public static void Main()
     {
         Dragon(1, 3);
+        Dwarf(10,12);
     }
 
-    static void Dragon(int x, int y)
+    public static void Dragon(int x, int y)
     {
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.SetCursorPosition(x, y);
         var dragon = new[]
         {
@@ -25,7 +27,20 @@ class GameCharacters
         {
             Console.WriteLine(line);
         }
-
     }
-
+    public static void Dwarf(int x, int y)
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.SetCursorPosition(x, y);
+        var dwarf = new[]
+        {
+            @" /\ ",
+            @" Oo ",
+            @"'{}'",
+        };
+        foreach (var line in dwarf)
+        {
+            Console.WriteLine(line);
+        }
+    }
 }
