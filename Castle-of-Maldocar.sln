@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Level 1", "01.Level 1\01.Level 1.csproj", "{5F3D368E-19F2-45B5-97D3-76C30645ED5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameFrame - basic functions", "01.Level 1\GameFrame - basic functions.csproj", "{5F3D368E-19F2-45B5-97D3-76C30645ED5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hero Movement", "Hero Movement\Hero Movement.csproj", "{702D38B6-FD42-4132-B119-F2D650155BE3}"
 EndProject
