@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Level 1", "01.Level 1\01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hero Movement", "Hero Movement\Hero Movement.csproj", "{702D38B6-FD42-4132-B119-F2D650155BE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory", "Inventory\Inventory.csproj", "{B07B01D6-4703-475F-B87A-F1516707F23D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{702D38B6-FD42-4132-B119-F2D650155BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{702D38B6-FD42-4132-B119-F2D650155BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{702D38B6-FD42-4132-B119-F2D650155BE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B07B01D6-4703-475F-B87A-F1516707F23D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07B01D6-4703-475F-B87A-F1516707F23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07B01D6-4703-475F-B87A-F1516707F23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07B01D6-4703-475F-B87A-F1516707F23D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

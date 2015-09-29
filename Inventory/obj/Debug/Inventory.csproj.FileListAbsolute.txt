@@ -1,0 +1,6 @@
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Inventory\bin\Debug\Inventory.exe.config
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Inventory\bin\Debug\Inventory.exe
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Inventory\bin\Debug\Inventory.pdb
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Inventory\obj\Debug\Inventory.exe
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Inventory\obj\Debug\Inventory.pdb
