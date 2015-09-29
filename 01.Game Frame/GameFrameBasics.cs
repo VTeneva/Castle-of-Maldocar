@@ -149,12 +149,12 @@ namespace _01.Game_Frame
 
         static void PressEnter()
         {
-            ConsoleKeyInfo cki;
-            cki = Console.ReadKey();
+            ConsoleKeyInfo enterKey;
+            enterKey = Console.ReadKey(true);
 
-            while (cki.Key != ConsoleKey.Enter)
+            while (enterKey.Key != ConsoleKey.Enter)
             {
-                cki = Console.ReadKey();
+                enterKey = Console.ReadKey(true);
             }
         }
 
@@ -168,7 +168,7 @@ namespace _01.Game_Frame
             //Start Screen
             FrontScreen();
 
-            //Clears console after enter pressed - TO BE CHANGED TO ANY KEY PRESSED?
+            //Clears console after enter pressed
             PressEnter();
 
             PrintString(35, Console.WindowHeight / 3 + 19, "Enter your name:", ConsoleColor.White, ConsoleColor.Black);
@@ -179,6 +179,7 @@ namespace _01.Game_Frame
             Console.Clear();
 
             //Level 1
+            Console.CursorVisible = false;
             GameFrame();
             MessageBoard("You are a great warrior that is prisoned in the castle of the dragon Mardocar.", ConsoleColor.DarkYellow);
 
@@ -202,8 +203,6 @@ namespace _01.Game_Frame
 
             SecondLevel();
             Console.SetCursorPosition(3, 2);
-            GameCharacters.Dragon(10, 10);
-
         }
     }
 }
