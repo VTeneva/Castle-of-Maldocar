@@ -57,6 +57,11 @@ class Program
         PrintString(75, 37, "INVENTORY", ConsoleColor.Yellow, ConsoleColor.Black);
     }
 
+    static void MessageBoard(string message, ConsoleColor color)
+    {
+        PrintString(3, 1, message, color, ConsoleColor.Black);
+    }
+
     static void FirstLevel()
     {
         for (int x = 2; x < 60; x++)
@@ -140,10 +145,12 @@ class Program
     static void PressEnter()
     {
         ConsoleKeyInfo cki;
-        do
+        cki = Console.ReadKey();
+
+        while (cki.Key != ConsoleKey.Enter)
         {
             cki = Console.ReadKey();
-        } while (cki.Key != ConsoleKey.Enter);
+        } 
     }
 
 
@@ -168,8 +175,7 @@ class Program
 
         //Level 1
         GameFrame();
-        PrintString(3, 1, "Oh dear, " + nickname + "! You are a great warrior that is prisoned in the castle of the dragon Mardocar."
-            , ConsoleColor.DarkYellow, ConsoleColor.Black);
+        MessageBoard("You are a great warrior that is prisoned in the castle of the dragon Mardocar.", ConsoleColor.DarkYellow);
 
         Console.SetCursorPosition(3, 2);
         PressEnter();
@@ -184,8 +190,7 @@ class Program
         //Level 2
         Console.Clear();
         GameFrame();
-        PrintString(3, 1, "Good job, " + nickname + "! You managed to escape from the tower. ."
-            , ConsoleColor.DarkYellow, ConsoleColor.Black);
+        MessageBoard("Good job, " + nickname + "! You managed to escape from the tower. .", ConsoleColor.DarkYellow);
 
         Console.SetCursorPosition(3, 2);
         PressEnter();
