@@ -1,6 +1,0 @@
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\GameChracters\bin\Debug\GameChracters.exe.config
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\GameChracters\bin\Debug\GameChracters.exe
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\GameChracters\bin\Debug\GameChracters.pdb
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\GameChracters\obj\Debug\GameChracters.csprojResolveAssemblyReference.cache
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\GameChracters\obj\Debug\GameChracters.exe
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\GameChracters\obj\Debug\GameChracters.pdb
