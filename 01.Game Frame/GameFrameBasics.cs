@@ -65,73 +65,6 @@ namespace _01.Game_Frame
             PrintString(3, 1, message, color, ConsoleColor.Black);
         }
 
-        static void FirstLevel()
-        {
-            for (int x = 2; x < 60; x++)
-            {
-                if ((x / 2) % 2 == 1)
-                {
-                    PrintSymbol(x, 6, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                    PrintSymbol(x, 46, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                }
-                PrintSymbol(x, 7, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                PrintSymbol(x, 45, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-            }
-
-            for (int x = 4; x < 58; x++)
-            {
-                PrintSymbol(x, 8, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                PrintSymbol(x, 44, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-            }
-
-            for (int y = 8; y < 45; y++)
-            {
-                if ((y / 2) % 2 == 1)
-                {
-                    PrintSymbol(2, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                    PrintSymbol(3, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                    PrintSymbol(58, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                    PrintSymbol(59, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                }
-            }
-
-            for (int y = 9; y < 44; y++)
-            {
-                PrintSymbol(4, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                PrintSymbol(5, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                PrintSymbol(56, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                PrintSymbol(57, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-            }
-
-
-
-        }
-
-        static void SecondLevel()
-        {
-            for (int x = 2; x < 60; x++)
-            {
-                PrintSymbol(x, 6, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(x, 7, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(x, 8, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(x, 44, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(x, 45, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(x, 46, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-            }
-
-            for (int y = 8; y < 45; y++)
-            {
-                PrintSymbol(2, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(3, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(4, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(5, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(56, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(57, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(58, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                PrintSymbol(59, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-            }
-        }
-
         public static void PrintSymbol(int x, int y, char symbol, ConsoleColor color, ConsoleColor backColor)
         {
             Console.SetCursorPosition(x, y);
@@ -159,7 +92,6 @@ namespace _01.Game_Frame
             }
         }
 
-
         public static void Main()
         {
             // Setting window size
@@ -184,8 +116,8 @@ namespace _01.Game_Frame
             GameFrame();
             MessageBoard("You are a great warrior that is prisoned in the castle of the dragon Mardocar.", ConsoleColor.DarkYellow);
 
-            PressEnter();
-            FirstLevel();
+            LevelOne first = new LevelOne();
+            first.FirstLevel();
 
             Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  //from Hero class
             ConsoleKeyInfo keyInfo;
@@ -197,7 +129,7 @@ namespace _01.Game_Frame
 
             level1.PrintHero(currentHeroCoords);
 
-            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Escape)
+            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
             {
                 PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.Black, ConsoleColor.Black);
                 switch (keyInfo.Key)
@@ -221,7 +153,6 @@ namespace _01.Game_Frame
                 level1.PrintHero(currentHeroCoords);
             }
 
-
             PressEnter();
             PrintString(75, 10, "END LEVEL 1.", ConsoleColor.Red, ConsoleColor.Black);
             PressEnter();
@@ -233,7 +164,8 @@ namespace _01.Game_Frame
 
             PressEnter();
 
-            SecondLevel();
+            LevelTwo second = new LevelTwo();
+            second.SecondLevel();
         }
     }
 }
