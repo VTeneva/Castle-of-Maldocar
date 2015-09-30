@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _01.Game_Frame
 {
-    class GameFrameBasics
+    public class GameFrameBasics
     {
         static void FrontScreen()
         {
@@ -131,7 +132,7 @@ namespace _01.Game_Frame
             }
         }
 
-        static void PrintSymbol(int x, int y, char symbol, ConsoleColor color, ConsoleColor backColor)
+        public static void PrintSymbol(int x, int y, char symbol, ConsoleColor color, ConsoleColor backColor)
         {
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = color;
@@ -139,7 +140,7 @@ namespace _01.Game_Frame
             Console.Write(symbol);
         }
 
-        static void PrintString(int x, int y, string textOrSequnce, ConsoleColor color, ConsoleColor backColor)
+        public static void PrintString(int x, int y, string textOrSequnce, ConsoleColor color, ConsoleColor backColor)
         {
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = color;
@@ -159,7 +160,7 @@ namespace _01.Game_Frame
         }
 
 
-        static void Main()
+        public static void Main()
         {
             // Setting window size
             Console.BufferHeight = Console.WindowHeight = 50;
@@ -177,17 +178,49 @@ namespace _01.Game_Frame
             string nickname = Console.ReadLine();
 
             Console.Clear();
-
-            //Level 1
             Console.CursorVisible = false;
+            //Level 1
+
             GameFrame();
             MessageBoard("You are a great warrior that is prisoned in the castle of the dragon Mardocar.", ConsoleColor.DarkYellow);
 
-            Console.SetCursorPosition(3, 2);
             PressEnter();
-
             FirstLevel();
-            Console.SetCursorPosition(3, 2);
+
+            Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  //from Hero class
+            ConsoleKeyInfo keyInfo;
+            currentHeroCoords.Add("col", 10);  //from Hero/Level class
+            currentHeroCoords.Add("row", 10);  //from Hero/Level class
+
+            HeroMovement level1 = new HeroMovement();
+            level1.PrintGameFrame();
+
+            level1.PrintHero(currentHeroCoords);
+
+            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Escape)
+            {
+                PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.Black, ConsoleColor.Black);
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        level1.UpdateHeroCoords(currentHeroCoords, "up");
+                        break;
+
+                    case ConsoleKey.RightArrow:
+                        level1.UpdateHeroCoords(currentHeroCoords, "right");
+                        break;
+
+                    case ConsoleKey.DownArrow:
+                        level1.UpdateHeroCoords(currentHeroCoords, "down");
+                        break;
+
+                    case ConsoleKey.LeftArrow:
+                        level1.UpdateHeroCoords(currentHeroCoords, "left");
+                        break;
+                }
+                level1.PrintHero(currentHeroCoords);
+            }
+
 
             PressEnter();
             PrintString(75, 10, "END LEVEL 1.", ConsoleColor.Red, ConsoleColor.Black);
@@ -198,11 +231,9 @@ namespace _01.Game_Frame
             GameFrame();
             MessageBoard("Good job, " + nickname + "! You managed to escape from the tower. .", ConsoleColor.DarkYellow);
 
-            Console.SetCursorPosition(3, 2);
             PressEnter();
 
             SecondLevel();
-            Console.SetCursorPosition(3, 2);
         }
     }
 }
