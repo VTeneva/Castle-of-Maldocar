@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>_01.Game_Frame</RootNamespace>
     <AssemblyName>01.Game Frame</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine.cs" />
+    <Compile Include="Vizualizations and basic functionality\GameObjects.cs" />
     <Compile Include="Vizualizations and basic functionality\FrontScreen.cs" />
     <Compile Include="Levels\LevelOne.cs" />
     <Compile Include="Vizualizations and basic functionality\GameCharacters.cs" />

@@ -1,6 +1,0 @@
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Hero Movement\bin\Debug\Hero Movement.exe.config
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Hero Movement\bin\Debug\Hero Movement.exe
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Hero Movement\bin\Debug\Hero Movement.pdb
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Hero Movement\obj\Debug\Hero Movement.csprojResolveAssemblyReference.cache
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Hero Movement\obj\Debug\Hero Movement.exe
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Hidden Object Game - StoryLine, Levels\Hero Movement\obj\Debug\Hero Movement.pdb

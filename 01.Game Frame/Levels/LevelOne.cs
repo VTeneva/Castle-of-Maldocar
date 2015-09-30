@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace _01.Game_Frame
 {
     public class LevelOne
@@ -45,6 +46,13 @@ namespace _01.Game_Frame
                 GameFrameBasics.PrintSymbol(48, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
                 GameFrameBasics.PrintSymbol(49, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
             }
+
+            // Test - drawing a sword in the middle of the room
+            //GameObject sword = new GameObject();
+            //sword.DrawSword(30, 36);
+
+            //GameObject skull = new GameObject();
+            //skull.DrawSkull(30, 36);
         }
     }
 }
