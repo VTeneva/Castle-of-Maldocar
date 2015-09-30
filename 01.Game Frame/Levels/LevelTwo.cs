@@ -10,7 +10,7 @@ namespace _01.Game_Frame
     {
         public void SecondLevel()
         {
-            for (int x = 2; x < 60; x++)
+            for (int x = 2; x < 52; x++)
             {
                 GameFrameBasics.PrintSymbol(x, 6, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
                 GameFrameBasics.PrintSymbol(x, 7, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
@@ -26,10 +26,10 @@ namespace _01.Game_Frame
                 GameFrameBasics.PrintSymbol(3, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
                 GameFrameBasics.PrintSymbol(4, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
                 GameFrameBasics.PrintSymbol(5, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                GameFrameBasics.PrintSymbol(56, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                GameFrameBasics.PrintSymbol(57, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                GameFrameBasics.PrintSymbol(58, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
-                GameFrameBasics.PrintSymbol(59, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+                GameFrameBasics.PrintSymbol(48, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+                GameFrameBasics.PrintSymbol(49, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+                GameFrameBasics.PrintSymbol(50, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
+                GameFrameBasics.PrintSymbol(51, y, 'I', ConsoleColor.Green, ConsoleColor.DarkGreen);
             }
         }
     }

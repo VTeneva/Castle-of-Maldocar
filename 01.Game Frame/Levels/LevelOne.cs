@@ -10,7 +10,7 @@ namespace _01.Game_Frame
     {
         public void FirstLevel()
         {
-            for (int x = 2; x < 60; x++)
+            for (int x = 2; x < 52; x++)
             {
                 if ((x / 2) % 2 == 1)
                 {
@@ -21,7 +21,7 @@ namespace _01.Game_Frame
                 GameFrameBasics.PrintSymbol(x, 45, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
             }
 
-            for (int x = 4; x < 58; x++)
+            for (int x = 4; x < 50; x++)
             {
                 GameFrameBasics.PrintSymbol(x, 8, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
                 GameFrameBasics.PrintSymbol(x, 44, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
@@ -33,8 +33,8 @@ namespace _01.Game_Frame
                 {
                     GameFrameBasics.PrintSymbol(2, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
                     GameFrameBasics.PrintSymbol(3, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                    GameFrameBasics.PrintSymbol(58, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                    GameFrameBasics.PrintSymbol(59, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                    GameFrameBasics.PrintSymbol(50, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                    GameFrameBasics.PrintSymbol(51, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
                 }
             }
 
@@ -42,8 +42,8 @@ namespace _01.Game_Frame
             {
                 GameFrameBasics.PrintSymbol(4, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
                 GameFrameBasics.PrintSymbol(5, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                GameFrameBasics.PrintSymbol(56, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
-                GameFrameBasics.PrintSymbol(57, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                GameFrameBasics.PrintSymbol(48, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                GameFrameBasics.PrintSymbol(49, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
             }
         }
     }

@@ -59,7 +59,7 @@ namespace _01.Game_Frame
         public void PrintGameFrame()
         {
             // Frame of hero's movements
-            for (int x = 5; x < 57; x++)
+            for (int x = 5; x < 49; x++)
             {
                 Dictionary<string, int> currentCoord1 = new Dictionary<string, int>();
                 currentCoord1.Add("col", x);
@@ -80,7 +80,7 @@ namespace _01.Game_Frame
                 forbiddenCoords.Add(currentCoord1);
 
                 Dictionary<string, int> currentCoord2 = new Dictionary<string, int>();
-                currentCoord2.Add("col", 56);
+                currentCoord2.Add("col", 48);
                 currentCoord2.Add("row", y);
                 forbiddenCoords.Add(currentCoord2);
             }
