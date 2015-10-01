@@ -1,13 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _01.Game_Frame
 {
-    public class Graphics
+    public class LevelBeforeLast
     {
+        public void PlayLevel()
+        {
+            Console.Clear();
+            Console.CursorVisible = false;
+
+            GameFrameBasics.GameFrame();
+            BeforeLast();
+
+            HeroMovement levelBeforeLast = new HeroMovement();
+            levelBeforeLast.PrintGameFrame();
+
+            Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  //from Hero class
+            ConsoleKeyInfo keyInfo;
+            currentHeroCoords.Add("col", 10);  //from Hero/Level class
+            currentHeroCoords.Add("row", 10);  //from Hero/Level class
+
+            levelBeforeLast.PrintHero(currentHeroCoords);
+
+            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
+            {
+                GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.Black, ConsoleColor.Black);
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        levelBeforeLast.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "up");
+                        break;
+
+                    case ConsoleKey.RightArrow:
+                        levelBeforeLast.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "right");
+                        break;
+
+                    case ConsoleKey.DownArrow:
+                        levelBeforeLast.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "down");
+                        break;
+
+                    case ConsoleKey.LeftArrow:
+                        levelBeforeLast.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "left");
+                        break;
+                }
+
+                levelBeforeLast.PrintHero(currentHeroCoords);
+            }
+            GameFrameBasics.PressEnter();
+        }
+
         public void BeforeLast()
         {
             for (int x = 2; x < 52; x++)
@@ -72,5 +115,6 @@ namespace _01.Game_Frame
         };
 
         public List<Dictionary<string, int>> forbiddenCoordsLevelBeforeLast = new List<Dictionary<string, int>>(); 
+
     }
 }

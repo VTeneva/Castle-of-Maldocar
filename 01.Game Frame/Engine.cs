@@ -25,54 +25,60 @@ namespace _01.Game_Frame
 
             //Level 1
 
-            GameFrameBasics.GameFrame();
+            //GameFrameBasics.GameFrame();
 
-            LevelOne first = new LevelOne();
-            first.FirstLevel();
+            //LevelOne first = new LevelOne();
+            //first.FirstLevel();
 
-            Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  //from Hero class
-            ConsoleKeyInfo keyInfo;
-            currentHeroCoords.Add("col", 10);  //from Hero/Level class
-            currentHeroCoords.Add("row", 10);  //from Hero/Level class
+            //Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  //from Hero class
+            //ConsoleKeyInfo keyInfo;
+            //currentHeroCoords.Add("col", 10);  //from Hero/Level class
+            //currentHeroCoords.Add("row", 10);  //from Hero/Level class
 
-            HeroMovement level1 = new HeroMovement();
-            level1.PrintGameFrame();
+            //HeroMovement level1 = new HeroMovement();
+            //level1.PrintGameFrame();
 
-            level1.PrintHero(currentHeroCoords);
+            //level1.PrintHero(currentHeroCoords);
 
-            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
-            {
-                GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.Black, ConsoleColor.Black);
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.UpArrow:
-                        level1.UpdateHeroCoords(currentHeroCoords, "up");
-                        break;
+            //while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
+            //{
+            //    GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.Black, ConsoleColor.Black);
+            //    switch (keyInfo.Key)
+            //    {
+            //        case ConsoleKey.UpArrow:
+            //            level1.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "up");
+            //            break;
 
-                    case ConsoleKey.RightArrow:
-                        level1.UpdateHeroCoords(currentHeroCoords, "right");
-                        break;
+            //        case ConsoleKey.RightArrow:
+            //            level1.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "right");
+            //            break;
 
-                    case ConsoleKey.DownArrow:
-                        level1.UpdateHeroCoords(currentHeroCoords, "down");
-                        break;
+            //        case ConsoleKey.DownArrow:
+            //            level1.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "down");
+            //            break;
 
-                    case ConsoleKey.LeftArrow:
-                        level1.UpdateHeroCoords(currentHeroCoords, "left");
-                        break;
-                }
-                level1.PrintHero(currentHeroCoords);
-            }
+            //        case ConsoleKey.LeftArrow:
+            //            level1.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "left");
+            //            break;
+            //    }
+            //    level1.PrintHero(currentHeroCoords);
+            //}
 
-            GameFrameBasics.PressEnter();
+            //GameFrameBasics.PressEnter();
 
             //Level 2
-            Console.Clear();
-            GameFrameBasics.GameFrame();
-            GameFrameBasics.PressEnter();
+            //Console.Clear();
+            //GameFrameBasics.GameFrame();
+            //GameFrameBasics.PressEnter();
 
-            LevelTwo second = new LevelTwo();
-            second.SecondLevel();
+            //LevelTwo second = new LevelTwo();
+            //second.SecondLevel();
+
+
+            // HOW TO CALL A LEVEL CLASS!! - PLEASE USE THIS TYPE OF METHOD
+            //Level BeforeLast
+            LevelBeforeLast levelBeforelast = new LevelBeforeLast();
+            levelBeforelast.PlayLevel();
         }
     }
 }
