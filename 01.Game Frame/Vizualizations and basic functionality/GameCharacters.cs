@@ -2,26 +2,36 @@
 
 namespace _01.Game_Frame
 {
-   public class GameCharacters
+    class GameCharacters
     {
         public static void Dragon(int x, int y)
         {
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(x, y);
-            Console.WriteLine(@"        ,       ");
+            Console.WriteLine(@"       ,");
             Console.SetCursorPosition(x, y + 1);
-            Console.WriteLine(@"      _/;	    ");
+            Console.WriteLine(@"     /'{    ,//");
             Console.SetCursorPosition(x, y + 2);
-            Console.WriteLine(@"  a^-/@ }~(     ");
+            Console.WriteLine(@"    / `| ,/` /");
             Console.SetCursorPosition(x, y + 3);
-            Console.WriteLine(@"~~'\-w / ((   <.");
+            Console.WriteLine(@"   |// |/ -- \");
             Console.SetCursorPosition(x, y + 4);
-            Console.WriteLine(@"      \ \(/__  )");
+            Console.WriteLine(@"  /* / /   /```");
             Console.SetCursorPosition(x, y + 5);
-            Console.WriteLine(@"       \( _(_)' ");
+            Console.WriteLine(@"  ""} ) .-,|");
             Console.SetCursorPosition(x, y + 6);
-            Console.WriteLine(@"        _> _>	  ");
+            Console.WriteLine(@"   // ,` _\");
+            Console.SetCursorPosition(x, y + 7);
+            Console.WriteLine(@"  ,\\   {");
+            Console.SetCursorPosition(x, y + 8);
+            Console.WriteLine(@" /|/|-'  \");
+            Console.SetCursorPosition(x, y + 9);
+            Console.WriteLine(@" ````|_\_ `_-_-/");
+            Console.SetCursorPosition(x, y + 10);
+            Console.WriteLine(@"       |{|{");
+            Console.SetCursorPosition(x, y + 11);
+            Console.WriteLine(@"       \/\/");
         }
 
         public static void Dwarf(int x, int y)
