@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine.cs" />
-    <Compile Include="Vizualizations and basic functionality\GameObjects.cs" />
+    <Compile Include="Levels\LevelThree.cs" />
     <Compile Include="Vizualizations and basic functionality\FrontScreen.cs" />
     <Compile Include="Levels\LevelOne.cs" />
     <Compile Include="Vizualizations and basic functionality\GameCharacters.cs" />

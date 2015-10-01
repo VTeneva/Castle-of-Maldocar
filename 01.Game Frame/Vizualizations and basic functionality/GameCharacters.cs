@@ -2,7 +2,7 @@
 
 namespace _01.Game_Frame
 {
-    class GameCharacters
+   public class GameCharacters
     {
         public static void Dragon(int x, int y)
         {

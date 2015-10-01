@@ -11,6 +11,7 @@ namespace _01.Game_Frame
         public static void Main()
         {
             // Setting window size
+            Console.WindowHeight = 50;
             Console.BufferHeight = Console.WindowHeight = 50;
             Console.BufferWidth = Console.WindowWidth = 80;
 
@@ -73,6 +74,8 @@ namespace _01.Game_Frame
 
             LevelTwo second = new LevelTwo();
             second.SecondLevel();
+
+            
         }
     }
 }
