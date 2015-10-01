@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _01.Game_Frame
 {
@@ -10,13 +7,12 @@ namespace _01.Game_Frame
     {
         public List<Dictionary<string, int>> forbiddenCoords = new List<Dictionary<string, int>>(); //From Level CLass
 
-
         public void PrintHero(Dictionary<string, int> currentHeroCoords)
         {
             GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], 'o', ConsoleColor.White, ConsoleColor.Black);
         }
 
-        public void UpdateHeroCoords(Dictionary<string, int> currentHeroCoords, string direction)
+        public void UpdateHeroCoords(Dictionary<string, int> currentHeroCoords, List<Dictionary<string, int>> forbiddenCoordsLevelBeforeLast, string direction)
         {
             Dictionary<string, int> newHeroCoords = new Dictionary<string, int>();
             bool allowed = true;
@@ -43,12 +39,19 @@ namespace _01.Game_Frame
 
             foreach (var forbiddenCoord in forbiddenCoords)
             {
-                if ((forbiddenCoord["row"] == newHeroCoords["row"]) && (forbiddenCoord["col"] == newHeroCoords["col"]))
+                if ((forbiddenCoord["row"] == newHeroCoords["row"]) && (forbiddenCoord["col"] == newHeroCoords["col"]))                                     
                 {
                     allowed = false;
                 }
             }
 
+            foreach (var forbiddenCoordLevelBeforeLast in forbiddenCoordsLevelBeforeLast)
+            {
+                if ((forbiddenCoordLevelBeforeLast["row"] == newHeroCoords["row"]) && (forbiddenCoordLevelBeforeLast["col"] == newHeroCoords["col"]))
+                {
+                    allowed = false;
+                }
+            }
             if (allowed)
             {
                 currentHeroCoords["row"] = newHeroCoords["row"];
