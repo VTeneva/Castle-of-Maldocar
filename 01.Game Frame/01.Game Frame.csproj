@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine.cs" />
+    <Compile Include="Levels\LevelBeforeLast.cs" />
     <Compile Include="Vizualizations and basic functionality\GameObjects.cs" />
     <Compile Include="Vizualizations and basic functionality\FrontScreen.cs" />
     <Compile Include="Levels\LevelOne.cs" />
