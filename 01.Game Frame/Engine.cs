@@ -11,6 +11,7 @@ namespace _01.Game_Frame
         public static void Main()
         {
             // Setting window size
+            Console.WindowHeight = 50;
             Console.BufferHeight = Console.WindowHeight = 50;
             Console.BufferWidth = Console.WindowWidth = 80;
 
@@ -23,7 +24,7 @@ namespace _01.Game_Frame
             Console.Clear();
             Console.CursorVisible = false;
 
-            //Level 1
+            ////Level 1
 
             //GameFrameBasics.GameFrame();
 
@@ -46,19 +47,19 @@ namespace _01.Game_Frame
             //    switch (keyInfo.Key)
             //    {
             //        case ConsoleKey.UpArrow:
-            //            level1.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "up");
+            //            level1.UpdateHeroCoords(currentHeroCoords, "up");
             //            break;
 
             //        case ConsoleKey.RightArrow:
-            //            level1.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "right");
+            //            level1.UpdateHeroCoords(currentHeroCoords, "right");
             //            break;
 
             //        case ConsoleKey.DownArrow:
-            //            level1.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "down");
+            //            level1.UpdateHeroCoords(currentHeroCoords, "down");
             //            break;
 
             //        case ConsoleKey.LeftArrow:
-            //            level1.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "left");
+            //            level1.UpdateHeroCoords(currentHeroCoords, "left");
             //            break;
             //    }
             //    level1.PrintHero(currentHeroCoords);
@@ -66,7 +67,7 @@ namespace _01.Game_Frame
 
             //GameFrameBasics.PressEnter();
 
-            //Level 2
+            ////Level 2
             //Console.Clear();
             //GameFrameBasics.GameFrame();
             //GameFrameBasics.PressEnter();
@@ -74,11 +75,10 @@ namespace _01.Game_Frame
             //LevelTwo second = new LevelTwo();
             //second.SecondLevel();
 
-
-            // HOW TO CALL A LEVEL CLASS!! - PLEASE USE THIS TYPE OF METHOD
             //Level BeforeLast
-            LevelBeforeLast levelBeforelast = new LevelBeforeLast();
-            levelBeforelast.PlayLevel();
+            LevelBeforeLast beforeLast = new LevelBeforeLast();
+            beforeLast.PlayLevel();
+
         }
     }
 }
