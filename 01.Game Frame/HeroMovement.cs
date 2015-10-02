@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _01.Game_Frame
 {
@@ -13,7 +14,8 @@ namespace _01.Game_Frame
         }
 
         // REFER TO THIS METHOD TO MAKE YOUR PLAYER MOVE
-        public void Movement(int startingRow, int startingCol, List<Dictionary<string, int>> forbiddenCoordsLevel)
+        public void Movement(int startingRow, int startingCol, List<Dictionary<string, int>> forbiddenCoordsLevel, 
+            Dictionary<string, List<string>>  specialCoordsLevel, Dictionary<string, string> messagesSpecial)
         {
             Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  
             currentHeroCoords.Add("col", startingRow);  
@@ -47,6 +49,21 @@ namespace _01.Game_Frame
                 }
 
                 PrintHero(currentHeroCoords);
+
+                string currCoord = currentHeroCoords["col"] + "," + currentHeroCoords["row"];
+
+                if (specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key != null)
+                {
+                    GameFrameBasics.MessageBoard(messagesSpecial[specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key], ConsoleColor.Cyan);
+
+                    if (Console.ReadKey(true).Key == ConsoleKey.Y)
+                    {
+                        GameFrameBasics.ClearMessageBoard();
+                    }
+                }
+
+                PrintHero(currentHeroCoords);
+
             }
         }
 
@@ -90,6 +107,9 @@ namespace _01.Game_Frame
                     allowed = false;
                 }
             }
+
+
+
             if (allowed)
             {
                 currentHeroCoords["row"] = newHeroCoords["row"];

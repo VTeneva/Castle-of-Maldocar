@@ -33,6 +33,19 @@ namespace _01.Game_Frame
             PrintString(3, 1, message, color, ConsoleColor.Black);
         }
 
+        public static void ClearMessageBoard()
+        {
+            for (int row = 0; row < 4; row++)
+            {
+                for (int cow = 0; cow < 80; cow++)
+                {
+                    Console.SetCursorPosition(cow, row);
+                    PrintSymbol(cow, row, ' ', ConsoleColor.Black, ConsoleColor.Black);
+                }
+            }
+                
+        }
+
         public static void PrintSymbol(int x, int y, char symbol, ConsoleColor color, ConsoleColor backColor)
         {
             Console.SetCursorPosition(x, y);
