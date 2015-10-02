@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dialogs.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Dialogs\LevelOneDialogs.cs" />
     <Compile Include="Vizualizations and basic functionality\DisplayDialog.cs" />

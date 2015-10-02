@@ -13,14 +13,15 @@ namespace _01.Game_Frame
             {
                 foreach (var speaker in dialogLevel)
                 {
-                    Console.WriteLine(speaker.Value[line]);
+                    WriteInDialogBoard(speaker.Value[line]);
                 }
             }
         }
 
         public void WriteInDialogBoard(string inputLine)
         {
-
+            Console.SetCursorPosition(0,0); 
+            Console.WriteLine(inputLine);
         }
     }
 }

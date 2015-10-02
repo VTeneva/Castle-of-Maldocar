@@ -15,42 +15,8 @@ namespace _01.Game_Frame
             BeforeLast();
 
             HeroMovement levelBeforeLast = new HeroMovement();
-            levelBeforeLast.PrintGameFrame();
+            levelBeforeLast.Movement(6, 25, forbiddenCoordsLevelBeforeLast);
 
-            Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  //from Hero class
-            ConsoleKeyInfo keyInfo;
-            currentHeroCoords.Add("col", 6);  // Starting position - column
-            currentHeroCoords.Add("row", 25);  // Starting position - row
-
-            levelBeforeLast.PrintHero(currentHeroCoords);
-
-            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
-            {
-                GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.Black, ConsoleColor.Black);
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.UpArrow:
-                        levelBeforeLast.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "up");
-                        break;
-
-                    case ConsoleKey.RightArrow:
-                        levelBeforeLast.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "right");
-                        break;
-
-                    case ConsoleKey.DownArrow:
-                        levelBeforeLast.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "down");
-                        break;
-
-                    case ConsoleKey.LeftArrow:
-                        levelBeforeLast.UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevelBeforeLast, "left");
-                        break;
-                }
-
-                levelBeforeLast.PrintHero(currentHeroCoords);
-            }
-
-            GameObject ghost = new GameObject();
-            ghost.DrawGhost(39,19);
         }
 
         // Forbidden coordinates specific for level Before Last.
@@ -213,6 +179,11 @@ namespace _01.Game_Frame
             }
 
             GameFrameBasics.PrintSymbol(44, 29, 'X', ConsoleColor.Red, ConsoleColor.Black);
+            List<int> graveCoord = new List<int>();
+            Dictionary<string, int> grave = new Dictionary<string, int>();
+            grave.Add("col", 44);
+            grave.Add("row", 29);
+            forbiddenCoordsLevelBeforeLast.Add(grave);
         }
     }
 }

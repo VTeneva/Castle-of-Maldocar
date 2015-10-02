@@ -5,11 +5,49 @@ namespace _01.Game_Frame
 {
     class HeroMovement
     {
-        public List<Dictionary<string, int>> forbiddenCoords = new List<Dictionary<string, int>>(); //From Level CLass
+        public List<Dictionary<string, int>> forbiddenCoords = new List<Dictionary<string, int>>();
 
         public void PrintHero(Dictionary<string, int> currentHeroCoords)
         {
             GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], 'o', ConsoleColor.White, ConsoleColor.Black);
+        }
+
+        // REFER TO THIS METHOD TO MAKE YOUR PLAYER MOVE
+        public void Movement(int startingRow, int startingCol, List<Dictionary<string, int>> forbiddenCoordsLevel)
+        {
+            Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  
+            currentHeroCoords.Add("col", startingRow);  
+            currentHeroCoords.Add("row", startingCol);
+
+            PrintGameFrame();
+            PrintHero(currentHeroCoords);
+
+            ConsoleKeyInfo keyInfo;
+
+            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
+            {
+                GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.Black, ConsoleColor.Black);
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevel, "up");
+                        break;
+
+                    case ConsoleKey.RightArrow:
+                        UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevel, "right");
+                        break;
+
+                    case ConsoleKey.DownArrow:
+                        UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevel, "down");
+                        break;
+
+                    case ConsoleKey.LeftArrow:
+                        UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevel, "left");
+                        break;
+                }
+
+                PrintHero(currentHeroCoords);
+            }
         }
 
         public void UpdateHeroCoords(Dictionary<string, int> currentHeroCoords, List<Dictionary<string, int>> forbiddenCoordsLevelBeforeLast, string direction)
