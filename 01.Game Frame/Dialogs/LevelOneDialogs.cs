@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace _01.Game_Frame
 {
-    class LevelOne_DialogOne
+    public class LevelOneDialogs
     {
+        public static Dictionary<string, List<string>> levelOneDialogOne = new Dictionary<string, List<string>>() {
+            
+        };
     }
 }

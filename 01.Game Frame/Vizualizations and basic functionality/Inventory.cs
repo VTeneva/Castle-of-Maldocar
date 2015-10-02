@@ -75,7 +75,7 @@ namespace _01.Game_Frame
 
             if (inventoryFull == true)
             {
-                // MessageBoard(messageToPrintOut, ConsoleColor.Red); //Error with MessageBoard(); not being visible from Inventory.cs
+                GameFrameBasics.MessageBoard(messageToPrintOut, ConsoleColor.Red); //Error with MessageBoard(); not being visible from Inventory.cs
                 return "not added";
             }
             else

@@ -144,7 +144,7 @@ namespace _01.Game_Frame
                 {
                     List<int> currCoord = new List<int>();
                     currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-                    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], 'G', ConsoleColor.DarkGreen, ConsoleColor.Black);
+                    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], 'G', ConsoleColor.Green, ConsoleColor.Black);
 
                     Dictionary<string, int> treeHead = new Dictionary<string, int>();
                     treeHead.Add("col", currCoord[0]);
@@ -174,7 +174,7 @@ namespace _01.Game_Frame
                 {
                     List<int> currCoord = new List<int>();
                     currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-                    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], '%', ConsoleColor.DarkGreen, ConsoleColor.Black);
+                    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], '@', ConsoleColor.DarkGreen, ConsoleColor.Black);
 
                     Dictionary<string, int> hedge = new Dictionary<string, int>();
                     hedge.Add("col", currCoord[0]);

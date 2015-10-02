@@ -28,7 +28,7 @@ namespace _01.Game_Frame
             PrintString(62, 37, "INVENTORY", ConsoleColor.Yellow, ConsoleColor.Black);
         }
 
-        public void MessageBoard(string message, ConsoleColor color)
+        public static void MessageBoard(string message, ConsoleColor color)
         {
             PrintString(3, 1, message, color, ConsoleColor.Black);
         }

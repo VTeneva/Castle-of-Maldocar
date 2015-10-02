@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01.Game_Frame.Vizualizations_and_basic_functionality
+namespace _01.Game_Frame
 {
-    class InstructionsWindow
+    public class InstructionsWindow
     {
+
     }
 }
