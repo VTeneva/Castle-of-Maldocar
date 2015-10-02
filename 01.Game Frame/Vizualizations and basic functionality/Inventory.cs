@@ -27,12 +27,12 @@ namespace _01.Game_Frame
 
         public void DrawItem(string itemToBeDrawn, int x, int y)
         {
-            if (InventoryDB.key == itemToBeDrawn)
+            if (GameObject.InventoryDB().ContainsKey(itemToBeDrawn))
             {
                 Console.SetCursorPosition(x, y);
-                for (int i = 0; i < InventoryDB.itemToBeDrawn; i++)
+                for (int i = 0; i < GameObject.InventoryDB()[itemToBeDrawn].Count; i++)
                 {
-                    Console.WriteLine(InventoryDB.itemToBeDrawn);
+                    Console.WriteLine(GameObject.InventoryDB()[itemToBeDrawn][i]);
                 }
             }
         }

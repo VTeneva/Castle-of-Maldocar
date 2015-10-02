@@ -46,24 +46,24 @@ namespace _01.Game_Frame
             InventoryDB.Add(
                 "skull",
                 new List<string> {
-                @"  .-'''-.",
+                @"  .-'''-. ",
                 @" / _   _ \",
                 @" ](_' `_)[",
-                @" `-. N ,-' ",
-                @"   `---'"
+                @" `-. N ,-'",
+                @"   `---'  "
             });
 
-            InventoryDB.Add(
-               "ghost",
-               new List<string> {
-                @"    .-.  ",
-                @"   ( "") ",
-                @"   .' '. ",
-                @"  (     )",
-                @"   ;   /`",
-                @"(__'  /  ",
-                @"`.__.'   "
-            });
+            //InventoryDB.Add(
+            //   "ghost",
+            //   new List<string> {
+            //    @"    .-.  ",
+            //    @"   ( "") ",
+            //    @"   .' '. ",
+            //    @"  (     )",
+            //    @"   ;   /`",
+            //    @"(__'  /  ",
+            //    @"`.__.'   "
+            //});
 
             return InventoryDB;
         }

@@ -48,7 +48,7 @@
     <Compile Include="Engine.cs" />
     <Compile Include="Dialogs\LevelOneDialogs.cs" />
     <Compile Include="Vizualizations and basic functionality\DisplayDialog.cs" />
-    <Compile Include="Vizualizations and basic functionality\GameObjects.cs" />
+    <Compile Include="Vizualizations and basic functionality\GameObject.cs" />
     <Compile Include="Levels\LevelBeforeLast.cs" />
     <Compile Include="Levels\LevelThree.cs" />
     <Compile Include="Vizualizations and basic functionality\FrontScreen.cs" />
