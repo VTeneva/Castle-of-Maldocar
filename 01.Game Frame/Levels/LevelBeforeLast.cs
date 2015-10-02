@@ -14,9 +14,13 @@ namespace _01.Game_Frame
             GameFrameBasics.GameFrame();
             BeforeLast();
 
-            HeroMovement levelBeforeLast = new HeroMovement();
-            levelBeforeLast.Movement(6, 25, forbiddenCoordsLevelBeforeLast);
+            bool levelIsOver = false;
 
+            do
+            {
+                HeroMovement levelBeforeLast = new HeroMovement();
+                levelBeforeLast.Movement(6, 25, forbiddenCoordsLevelBeforeLast);
+            } while (levelIsOver);
         }
 
         // Forbidden coordinates specific for level Before Last.
