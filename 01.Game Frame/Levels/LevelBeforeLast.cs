@@ -32,7 +32,9 @@ namespace _01.Game_Frame
         public Dictionary<string, string> MessagesSpecialLevelOne()
         {
             Dictionary<string, string> messagesSpecial = new Dictionary<string, string>();
-            messagesSpecial.Add("coin", "Whoa! You found a coin! Do you want to add it to your inventory? (Press Y/N)");
+            messagesSpecial.Add("coin", "Whoa! You found a coin! Do you want to add it to your inventory? (Press Y for Yes)");
+            messagesSpecial.Add("coin", "Whoa! You found a coin! Do you want to add it to your inventory? (Press Y for Yes)");
+
             return messagesSpecial;
         }
 
