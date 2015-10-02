@@ -126,30 +126,30 @@ namespace _01.Game_Frame.Levels
             level3.PrintGameFrame();
             PrintHero(currentHeroCoords);
 
-            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
-            {
+            //while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
+            //{
                 
-                GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.DarkRed, ConsoleColor.DarkRed);
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.UpArrow:
-                        level3.UpdateHeroCoords(currentHeroCoords, "up");
-                        break;
+            //    GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.DarkRed, ConsoleColor.DarkRed);
+            //    switch (keyInfo.Key)
+            //    {
+            //        case ConsoleKey.UpArrow:
+            //            level3.UpdateHeroCoords(currentHeroCoords, "up");
+            //            break;
 
-                    case ConsoleKey.RightArrow:
-                        level3.UpdateHeroCoords(currentHeroCoords, "right");
-                        break;
+            //        case ConsoleKey.RightArrow:
+            //            level3.UpdateHeroCoords(currentHeroCoords, "right");
+            //            break;
 
-                    case ConsoleKey.DownArrow:
-                        level3.UpdateHeroCoords(currentHeroCoords, "down");
-                        break;
+            //        case ConsoleKey.DownArrow:
+            //            level3.UpdateHeroCoords(currentHeroCoords, "down");
+            //            break;
 
-                    case ConsoleKey.LeftArrow:
-                        level3.UpdateHeroCoords(currentHeroCoords, "left");
-                        break;
-                }
-                PrintHero(currentHeroCoords);
-            }
+            //        case ConsoleKey.LeftArrow:
+            //            level3.UpdateHeroCoords(currentHeroCoords, "left");
+            //            break;
+            //    }
+            //    PrintHero(currentHeroCoords);
+            //}
                     
            
             
