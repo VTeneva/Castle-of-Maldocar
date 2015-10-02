@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _01.Game_Frame
 {
@@ -20,12 +16,10 @@ namespace _01.Game_Frame
             front.PrintFrontScreen();
             string nickname = Console.ReadLine();
 
-
             Console.Clear();
             Console.CursorVisible = false;
 
             ////Level 1
-
             //GameFrameBasics.GameFrame();
 
             //LevelOne first = new LevelOne();
