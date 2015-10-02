@@ -1,1 +1,0 @@
-E:\SoftUni\Advanced CSharp\Teamwork assignment\Castle-of-Maldocar\Hero Movement\bin\Debug\Hero Movement.exe.config
