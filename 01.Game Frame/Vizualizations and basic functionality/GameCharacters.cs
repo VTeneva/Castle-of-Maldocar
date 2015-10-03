@@ -37,11 +37,13 @@ namespace _01.Game_Frame
         public static void Dwarf(int x, int y)
         {
             Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.SetCursorPosition(x, y);
             Console.WriteLine(@" /\ ");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(x, y + 1);
             Console.WriteLine(@" Oo ");
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(x, y + 1);
             Console.WriteLine(@"'{}'");
 

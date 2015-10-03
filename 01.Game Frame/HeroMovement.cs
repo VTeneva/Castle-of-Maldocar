@@ -56,10 +56,10 @@ namespace _01.Game_Frame
                 {
                     GameFrameBasics.MessageBoard(messagesSpecial[specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key], ConsoleColor.Cyan);
 
-                    //if (Console.ReadKey(true).Key == ConsoleKey.Y)
-                    //{
-                    //    // Add here AddToInventory method
-                    //}
+                    if (Console.ReadKey(true).Key == ConsoleKey.Y)
+                    {
+                        GameFrameBasics.ClearMessageBoard();
+                    }
                 }
 
                 PrintHero(currentHeroCoords);

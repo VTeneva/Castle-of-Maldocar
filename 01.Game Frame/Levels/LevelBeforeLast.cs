@@ -33,7 +33,6 @@ namespace _01.Game_Frame
         {
             Dictionary<string, string> messagesSpecial = new Dictionary<string, string>();
             messagesSpecial.Add("coin", "Whoa! You found a coin! Do you want to add it to your inventory? (Press Y for Yes)");
-            messagesSpecial.Add("coin", "Whoa! You found a coin! Do you want to add it to your inventory? (Press Y for Yes)");
 
             return messagesSpecial;
         }
@@ -44,107 +43,110 @@ namespace _01.Game_Frame
         {
             for (int x = 2; x < 52; x++)
             {
-                GameFrameBasics.PrintSymbol(x, 6, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(x, 7, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(x, 8, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(x, 44, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(x, 45, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(x, 46, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
+                if ((x / 2) % 2 == 1)
+                {
+                    GameFrameBasics.PrintSymbol(x, 6, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                    GameFrameBasics.PrintSymbol(x, 46, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                }
+                GameFrameBasics.PrintSymbol(x, 7, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                GameFrameBasics.PrintSymbol(x, 45, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+            }
+
+            for (int x = 4; x < 50; x++)
+            {
+                GameFrameBasics.PrintSymbol(x, 8, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                GameFrameBasics.PrintSymbol(x, 44, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
             }
 
             for (int y = 8; y < 45; y++)
             {
-                GameFrameBasics.PrintSymbol(2, y, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(3, y, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(4, y, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(5, y, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(48, y, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(49, y, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(50, y, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-                GameFrameBasics.PrintSymbol(51, y, 'H', ConsoleColor.DarkRed, ConsoleColor.DarkYellow);
-            }
-
-            for (int i = 0; i < treesCoordinates.Count; i++)
-            {
-                foreach (string coord in treesCoordinates)
+                if ((y / 2) % 2 == 1)
                 {
-                    List<int> currCoord = new List<int>();
-                    currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-                    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], 'G', ConsoleColor.Green, ConsoleColor.Black);
-
-                    Dictionary<string, int> treeHead = new Dictionary<string, int>();
-                    treeHead.Add("col", currCoord[0]);
-                    treeHead.Add("row", currCoord[1]);
-                    forbiddenCoordsLevelBeforeLast.Add(treeHead);
+                    GameFrameBasics.PrintSymbol(2, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                    GameFrameBasics.PrintSymbol(3, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                    GameFrameBasics.PrintSymbol(50, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                    GameFrameBasics.PrintSymbol(51, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
                 }
             }
 
-            for (int i = 0; i < treesCoordinates.Count; i++)
+            for (int y = 9; y < 44; y++)
             {
-                foreach (string coord in treesCoordinates)
-                {
-                    List<int> currCoord = new List<int>();
-                    currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-                    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1] + 1, '|', ConsoleColor.DarkRed, ConsoleColor.Black);
-
-                    Dictionary<string, int> treeStem = new Dictionary<string, int>();
-                    treeStem.Add("col", currCoord[0]);
-                    treeStem.Add("row", currCoord[1] + 1);
-                    forbiddenCoordsLevelBeforeLast.Add(treeStem);
-                }
+                GameFrameBasics.PrintSymbol(4, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                GameFrameBasics.PrintSymbol(5, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                GameFrameBasics.PrintSymbol(48, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
+                GameFrameBasics.PrintSymbol(49, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
             }
 
-            //for (int i = 0; i < hedgeCoordinates.Count; i++)
-            //{
-            //    foreach (string coord in hedgeCoordinates)
-            //    {
-            //        List<int> currCoord = new List<int>();
-            //        currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-            //        GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], '@', ConsoleColor.DarkGreen, ConsoleColor.Black);
+            foreach (string coord in treesCoordinates)
+            {
+                List<int> currCoord = new List<int>();
+                currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+                GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], 'G', ConsoleColor.Green, ConsoleColor.Black);
 
-            //        Dictionary<string, int> hedge = new Dictionary<string, int>();
-            //        hedge.Add("col", currCoord[0]);
-            //        hedge.Add("row", currCoord[1]);
-            //        forbiddenCoordsLevelBeforeLast.Add(hedge);
-            //    }
-            //}
+                Dictionary<string, int> treeHead = new Dictionary<string, int>();
+                treeHead.Add("col", currCoord[0]);
+                treeHead.Add("row", currCoord[1]);
+                forbiddenCoordsLevelBeforeLast.Add(treeHead);
+            }
+            
+
+
+            foreach (string coord in treesCoordinates)
+            {
+                List<int> currCoord = new List<int>();
+                currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+                GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1] + 1, '|', ConsoleColor.DarkRed, ConsoleColor.Black);
+
+                Dictionary<string, int> treeStem = new Dictionary<string, int>();
+                treeStem.Add("col", currCoord[0]);
+                treeStem.Add("row", currCoord[1] + 1);
+                forbiddenCoordsLevelBeforeLast.Add(treeStem);
+            }
+            
+
+
+            foreach (string coord in hedgeCoordinates)
+            {
+                List<int> currCoord = new List<int>();
+                currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+                GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], '@', ConsoleColor.DarkGreen, ConsoleColor.Black);
+
+                Dictionary<string, int> hedge = new Dictionary<string, int>();
+                hedge.Add("col", currCoord[0]);
+                hedge.Add("row", currCoord[1]);
+                forbiddenCoordsLevelBeforeLast.Add(hedge);
+            }
+
 
             // Add a key to special coordinates - coins.
-            specialCoordsLevelBeforeLast.Add("coin", new List<string>());
+            //specialCoordsLevelBeforeLast.Add("coin", new List<string>());
 
-            for (int i = 0; i < coinsCoordinates.Count; i++)
+            foreach (string coord in coinsCoordinates)
             {
-                foreach (string coord in coinsCoordinates)
-                {
-                    List<int> currCoord = new List<int>();
-                    currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-                    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], '$', ConsoleColor.Yellow, ConsoleColor.Black);
+                List<int> currCoord = new List<int>();
+                currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+                GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], '$', ConsoleColor.Yellow, ConsoleColor.Black);
 
-                    Dictionary<string, int> coin = new Dictionary<string, int>();
-                    coin.Add("col", currCoord[0]);
-                    coin.Add("row", currCoord[1]);
-                    forbiddenCoordsLevelBeforeLast.Add(coin);
+                Dictionary<string, int> coin = new Dictionary<string, int>();
+                coin.Add("col", currCoord[0]);
+                coin.Add("row", currCoord[1]);
+                forbiddenCoordsLevelBeforeLast.Add(coin);
 
-                    string co = (currCoord[0] - 1) + "," + (currCoord[1]);
-                    specialCoordsLevelBeforeLast["coin"].Add(co);
-                }
+                SpecialCoordinates.SelectSpecialCoordinates("coin", specialCoordsLevelBeforeLast, currCoord);
             }
-
-            for (int i = 0; i < crossCoordinates.Count; i++)
+            
+            foreach (string coord in crossCoordinates)
             {
-                foreach (string coord in crossCoordinates)
-                {
-                    List<int> currCoord = new List<int>();
-                    currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-                    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], ' ', ConsoleColor.DarkGray, ConsoleColor.DarkGray);
+                List<int> currCoord = new List<int>();
+                currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+                GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], ' ', ConsoleColor.DarkGray, ConsoleColor.DarkGray);
 
-                    Dictionary<string, int> cross = new Dictionary<string, int>();
-                    cross.Add("col", currCoord[0]);
-                    cross.Add("row", currCoord[1]);
-                    forbiddenCoordsLevelBeforeLast.Add(cross);
-                }
+                Dictionary<string, int> cross = new Dictionary<string, int>();
+                cross.Add("col", currCoord[0]);
+                cross.Add("row", currCoord[1]);
+                forbiddenCoordsLevelBeforeLast.Add(cross);
             }
-
+            
             GameFrameBasics.PrintSymbol(44, 29, 'X', ConsoleColor.Red, ConsoleColor.Black);
             List<int> graveCoord = new List<int>();
             Dictionary<string, int> grave = new Dictionary<string, int>();

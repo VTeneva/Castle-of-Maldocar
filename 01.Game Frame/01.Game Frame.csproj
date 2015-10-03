@@ -59,6 +59,7 @@
     <Compile Include="Vizualizations and basic functionality\Inventory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Levels\LevelTwo.cs" />
+    <Compile Include="Vizualizations and basic functionality\SpecialCoordinates.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
