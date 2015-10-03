@@ -17,7 +17,7 @@ namespace _01.Game_Frame
             // bool levelIsOver = false;
 
             HeroMovement levelBeforeLast = new HeroMovement();
-            levelBeforeLast.Movement(6, 25, forbiddenCoordsLevelBeforeLast, specialCoordsLevelBeforeLast, 
+            levelBeforeLast.Movement(6, 25, "right", forbiddenCoordsLevelBeforeLast, specialCoordsLevelBeforeLast, 
                 MessagesSpecialLevelOne());
         }
 
