@@ -34,19 +34,34 @@ namespace _01.Game_Frame
             Console.WriteLine(@"       \/\/");
         }
 
-        public static void Dwarf(int x, int y)
+        public static void OldKing(int x, int y)
         {
             Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.SetCursorPosition(x, y);
-            Console.WriteLine(@" /\ ");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.SetCursorPosition(x, y + 1);
-            Console.WriteLine(@" Oo ");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.SetCursorPosition(x, y + 1);
-            Console.WriteLine(@"'{}'");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(@" MMM ");
 
+            Console.SetCursorPosition(x, y + 1);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(@" ");
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Write(@"o,O");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(@" ");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.SetCursorPosition(x, y + 2);
+            Console.Write(@"'");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(@"{(}");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(@"'");
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.SetCursorPosition(x, y + 3);
+            Console.WriteLine(@" o o ");
         }
     }
 }

@@ -108,8 +108,6 @@ namespace _01.Game_Frame
                 }
             }
 
-
-
             if (allowed)
             {
                 currentHeroCoords["row"] = newHeroCoords["row"];
