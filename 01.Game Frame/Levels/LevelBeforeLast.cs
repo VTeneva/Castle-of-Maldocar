@@ -89,8 +89,6 @@ namespace _01.Game_Frame
                 forbiddenCoordsLevelBeforeLast.Add(treeHead);
             }
             
-
-
             foreach (string coord in treesCoordinates)
             {
                 List<int> currCoord = new List<int>();
@@ -103,8 +101,6 @@ namespace _01.Game_Frame
                 forbiddenCoordsLevelBeforeLast.Add(treeStem);
             }
             
-
-
             foreach (string coord in hedgeCoordinates)
             {
                 List<int> currCoord = new List<int>();
@@ -118,9 +114,6 @@ namespace _01.Game_Frame
             }
 
 
-            // Add a key to special coordinates - coins.
-            //specialCoordsLevelBeforeLast.Add("coin", new List<string>());
-
             foreach (string coord in coinsCoordinates)
             {
                 List<int> currCoord = new List<int>();
@@ -132,6 +125,7 @@ namespace _01.Game_Frame
                 coin.Add("row", currCoord[1]);
                 forbiddenCoordsLevelBeforeLast.Add(coin);
 
+                // Add coins to special coordinates.
                 SpecialCoordinates.SelectSpecialCoordinates("coin", specialCoordsLevelBeforeLast, currCoord);
             }
             
