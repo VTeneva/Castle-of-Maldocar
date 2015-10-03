@@ -8,13 +8,29 @@ namespace _01.Game_Frame
     {
         public List<Dictionary<string, int>> forbiddenCoords = new List<Dictionary<string, int>>();
 
-        public void PrintHero(Dictionary<string, int> currentHeroCoords)
+        public void PrintHero(Dictionary<string, int> currentHeroCoords, string currentHeroPosition)
         {
-            GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], 'o', ConsoleColor.White, ConsoleColor.Black);
+            char pos = ' ';
+            switch (currentHeroPosition)
+            {
+                case "up":
+                    pos = 'W';
+                    break;
+                case "down":
+                    pos = 'M';
+                    break;
+                case "left":
+                    pos = '3';
+                    break;
+                case "right":
+                    pos = 'E';
+                    break;
+            }
+            GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], pos, ConsoleColor.White, ConsoleColor.Black);
         }
 
         // REFER TO THIS METHOD TO MAKE YOUR PLAYER MOVE
-        public void Movement(int startingRow, int startingCol, List<Dictionary<string, int>> forbiddenCoordsLevel, 
+        public void Movement(int startingRow, int startingCol, string currentHeroPosition, List<Dictionary<string, int>> forbiddenCoordsLevel, 
             Dictionary<string, List<string>>  specialCoordsLevel, Dictionary<string, string> messagesSpecial)
         {
             Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  
@@ -22,7 +38,7 @@ namespace _01.Game_Frame
             currentHeroCoords.Add("row", startingCol);
 
             PrintGameFrame();
-            PrintHero(currentHeroCoords);
+            PrintHero(currentHeroCoords, currentHeroPosition);
 
             ConsoleKeyInfo keyInfo;
 
@@ -32,23 +48,27 @@ namespace _01.Game_Frame
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.UpArrow:
+                        currentHeroPosition = "up";
                         UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevel, "up");
                         break;
 
                     case ConsoleKey.RightArrow:
+                        currentHeroPosition = "right";
                         UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevel, "right");
                         break;
 
                     case ConsoleKey.DownArrow:
+                        currentHeroPosition = "down";
                         UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevel, "down");
                         break;
 
                     case ConsoleKey.LeftArrow:
+                        currentHeroPosition = "left";
                         UpdateHeroCoords(currentHeroCoords, forbiddenCoordsLevel, "left");
                         break;
                 }
 
-                PrintHero(currentHeroCoords);
+                PrintHero(currentHeroCoords, currentHeroPosition);
 
                 string currCoord = currentHeroCoords["col"] + "," + currentHeroCoords["row"];
 
@@ -62,7 +82,7 @@ namespace _01.Game_Frame
                     }
                 }
 
-                PrintHero(currentHeroCoords);
+                PrintHero(currentHeroCoords, currentHeroPosition);
 
             }
         }
