@@ -30,11 +30,35 @@ namespace _01.Game_Frame
             if (GameObject.InventoryDB().ContainsKey(itemToBeDrawn))
             {
                 Console.SetCursorPosition(x, y);
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
                 for (int i = 0; i < GameObject.InventoryDB()[itemToBeDrawn].Count; i++)
                 {
-                    Console.WriteLine(GameObject.InventoryDB()[itemToBeDrawn][i]);
+                   Console.Write(GameObject.InventoryDB()[itemToBeDrawn][i]);
+                   Console.WriteLine();
+                   Console.SetCursorPosition(x, y + i);
                 }
             }
+            // Test data
+            //List<string> testObject = new List<string> 
+            //    {
+            //        @"  .-'''-. ",
+            //        @" / _   _ \",
+            //        @" ](_' `_)[",
+            //        @" `-. N ,-'",
+            //        @"   `---'  "
+            //    };
+
+            //Console.SetCursorPosition(35, 30);
+            //Console.BackgroundColor = ConsoleColor.Black;
+            //Console.ForegroundColor = ConsoleColor.White;
+            //for (int i = 0; i < testObject.Count; i++)
+            //{
+            //    Console.Write(testObject[i]);
+            //    Console.WriteLine();
+            //    Console.SetCursorPosition(35, 31 + i);
+                
+            //}
         }
 
         public string AddToInventory(string objName)

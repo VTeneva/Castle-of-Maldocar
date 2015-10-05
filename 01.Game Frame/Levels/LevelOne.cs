@@ -9,7 +9,29 @@ namespace _01.Game_Frame
 {
     public class LevelOne
     {
-        public void FirstLevel()
+        public void PlayLevel()
+        {
+            Console.Clear();
+            Console.CursorVisible = false;
+
+            GameFrameBasics.GameFrame();
+            One();
+
+            Inventory gameInventory = new Inventory();
+            gameInventory.DrawItem("sword", 35, 30);
+
+            HeroMovement levelOne = new HeroMovement();
+            levelOne.Movement(6, 25, forbiddenCoordsLevelOne);
+            
+            
+
+        }
+
+        // Forbidden coordinates specific for level Before Last.
+        public List<Dictionary<string, int>> forbiddenCoordsLevelOne = new List<Dictionary<string, int>>();
+
+        // Printing the level's objects on the console.
+        public void One()
         {
             for (int x = 2; x < 52; x++)
             {
@@ -46,13 +68,6 @@ namespace _01.Game_Frame
                 GameFrameBasics.PrintSymbol(48, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
                 GameFrameBasics.PrintSymbol(49, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
             }
-
-            // Test - drawing a sword in the middle of the room
-            //GameObject sword = new GameObject();
-            //sword.DrawSword(30, 36);
-
-            //GameObject skull = new GameObject();
-            //skull.DrawSkull(30, 36);
         }
     }
 }

@@ -20,7 +20,8 @@ namespace _01.Game_Frame
             Console.CursorVisible = false;
 
             //Level 1
-
+            LevelOne one = new LevelOne();
+            one.PlayLevel();
 
             //Level 2
 
