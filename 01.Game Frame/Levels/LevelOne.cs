@@ -18,17 +18,28 @@ namespace _01.Game_Frame
             One();
 
             Inventory gameInventory = new Inventory();
-            gameInventory.DrawItem("sword", 35, 30);
+            gameInventory.DrawItem("skull", 35, 29);
+            //gameInventory.EraseItem("skull", 35, 29, 10);
 
-            HeroMovement levelOne = new HeroMovement();
-            levelOne.Movement(6, 25, forbiddenCoordsLevelOne);
-            
-            
-
+            HeroMovement levelOneHeroMovement = new HeroMovement();
+            levelOneHeroMovement.Movement(6, 25, "right", forbiddenCoordsLevelOne, specialCoordsLevelOne, MessagesSpecialLevelOne());
         }
 
-        // Forbidden coordinates specific for level Before Last.
+
+        // Forbidden coordinates specific for level One.
         public List<Dictionary<string, int>> forbiddenCoordsLevelOne = new List<Dictionary<string, int>>();
+
+        // "Special" coordinates - a message pops-up when the hero steps over them.
+        public Dictionary<string, List<string>> specialCoordsLevelOne = new Dictionary<string, List<string>>();
+
+        // Messages - special coordinates.
+        public Dictionary<string, string> MessagesSpecialLevelOne()
+        {
+            Dictionary<string, string> messagesSpecial = new Dictionary<string, string>();
+            messagesSpecial.Add("skull", "Whoa! You found a skull! Do you want to add it to your inventory? (Press [Y] for Yes)");
+
+            return messagesSpecial;
+        }
 
         // Printing the level's objects on the console.
         public void One()
@@ -68,6 +79,30 @@ namespace _01.Game_Frame
                 GameFrameBasics.PrintSymbol(48, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
                 GameFrameBasics.PrintSymbol(49, y, '#', ConsoleColor.Gray, ConsoleColor.DarkGray);
             }
+
+            // Designating the forbidden fields taken up by the skull
+            foreach (string coord in skullCoords)
+            {
+                List<int> currCoord = new List<int>();
+                currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+
+                Dictionary<string, int> skullSpace = new Dictionary<string, int>();
+                skullSpace.Add("col", currCoord[0]);
+                skullSpace.Add("row", currCoord[1]);
+                forbiddenCoordsLevelOne.Add(skullSpace);
+            }
         }
+
+        // Objects coords data
+
+        public List<string> skullCoords = new List<string> {
+
+            "35,28",    "36,28",    "37,28",    "38,28",    "39,28",    "40,28",    "41,28",    "42,28",    "43,28",    "44,28",
+            "35,29",    "36,29",    "37,29",    "38,29",    "39,29",    "40,29",    "41,29",    "42,29",    "43,29",    "44,29",
+            "35,30",    "36,30",    "37,30",    "38,30",    "39,30",    "40,30",    "41,30",    "42,30",    "43,30",    "44,30",
+            "35,31",    "36,31",    "37,31",    "38,31",    "39,31",    "40,31",    "41,31",    "42,31",    "43,31",    "44,31",
+            "35,32",    "36,32",    "37,32",    "38,32",    "39,32",    "40,32",    "41,32",    "42,32",    "43,32",    "44,32",
+
+        };
     }
 }

@@ -29,7 +29,7 @@ namespace _01.Game_Frame
         {
             if (GameObject.InventoryDB().ContainsKey(itemToBeDrawn))
             {
-                Console.SetCursorPosition(x, y);
+                Console.SetCursorPosition(x, y-1); // -1 To avoid printing the second line on top of the first line in the second loop iteration
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
                 for (int i = 0; i < GameObject.InventoryDB()[itemToBeDrawn].Count; i++)
@@ -59,6 +59,29 @@ namespace _01.Game_Frame
             //    Console.SetCursorPosition(35, 31 + i);
                 
             //}
+        }
+
+        public void EraseItem(string itemToBeErased, int x, int y, int width)
+        {
+            if (GameObject.InventoryDB().ContainsKey(itemToBeErased))
+            {
+                y--;
+                Console.SetCursorPosition(x, y);
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.SetCursorPosition(x, y);
+                for (int i = y; i <= y + GameObject.InventoryDB()[itemToBeErased].Count; i++)
+                {
+                    
+                    for (int j = x; j < x + width; j++)
+                    {
+                        Console.Write(" ");    
+                    }
+                    Console.SetCursorPosition(x, i);
+                }
+
+            }
         }
 
         public string AddToInventory(string objName)
