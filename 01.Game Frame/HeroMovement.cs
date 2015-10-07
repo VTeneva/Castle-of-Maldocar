@@ -45,6 +45,7 @@ namespace _01.Game_Frame
             while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
             {
                 GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.Black, ConsoleColor.Black);
+
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.UpArrow:
@@ -78,8 +79,21 @@ namespace _01.Game_Frame
 
                     if (Console.ReadKey(true).Key == ConsoleKey.Y)
                     {
+                        string adjacentObject = null;
+
+                        GameFrameBasics.ClearMessageBoard();
+                        // Check which is the object that we would take into the inventory.
+                        adjacentObject = messagesSpecial[specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key];
+
+                        // Erase the object from the frame (with EraseItem()).
+                        // Call AddToInventory() with "objName" = the object we are next to.
+
+                    }
+                    else if (Console.ReadKey(true).Key == ConsoleKey.N)
+                    {
                         GameFrameBasics.ClearMessageBoard();
                     }
+                    
                 }
 
                 PrintHero(currentHeroCoords, currentHeroPosition);
