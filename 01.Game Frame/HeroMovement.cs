@@ -30,8 +30,12 @@ namespace _01.Game_Frame
         }
 
         // REFER TO THIS METHOD TO MAKE YOUR PLAYER MOVE
-        public void Movement(int startingRow, int startingCol, string currentHeroPosition, List<Dictionary<string, int>> forbiddenCoordsLevel, 
-            Dictionary<string, List<string>>  specialCoordsLevel, Dictionary<string, string> messagesSpecial)
+        public void Movement(int startingRow, int startingCol, 
+            string currentHeroPosition, 
+            List<Dictionary<string, int>> forbiddenCoordsLevel, 
+            Dictionary<string, Dictionary<string, int>>  specialCoordsLevel,
+            Dictionary<string, Dictionary<string, int>> itemsCoords,
+            Dictionary<string, string> messagesSpecial)
         {
             Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  
             currentHeroCoords.Add("col", startingRow);  
@@ -73,36 +77,36 @@ namespace _01.Game_Frame
 
                 string currCoord = currentHeroCoords["col"] + "," + currentHeroCoords["row"];
 
-                if (specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key != null)
-                {
-                    GameFrameBasics.MessageBoard(messagesSpecial[specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key], ConsoleColor.Cyan);
+                //if (specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key != null)
+                //{
+                //    GameFrameBasics.MessageBoard(messagesSpecial[specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key], ConsoleColor.Cyan);
 
-                    if (Console.ReadKey(true).Key == ConsoleKey.Y)
-                    {
-                        string adjacentObject = null;
+                //    if (Console.ReadKey(true).Key == ConsoleKey.Y)
+                //    {
+                //        string adjacentObject = null;
 
-                        GameFrameBasics.ClearMessageBoard();
-                        // Check which is the object that we would take into the inventory.
-                        adjacentObject = specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key;
-                        int adjacentObjectStartingX = 0;
-                        int adjacentObjectStartingY = 0;
-                        int adjacentObjectWidth = 0;
+                //        GameFrameBasics.ClearMessageBoard();
+                //        // Check which is the object that we would take into the inventory.
+                //        adjacentObject = specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key;
+                //        int adjacentObjectStartingX = 0;
+                //        int adjacentObjectStartingY = 0;
+                //        int adjacentObjectWidth = 0;
 
-                        // Erase the object from the frame (with EraseItem()).
-                        // Ideally it should be called like this: 
-                        // Inventory.EraseItem(adjacentObject, adjacentObjectStartingX, adjacentObjectStartingY, adjacentObjectWidth);
+                //        // Erase the object from the frame (with EraseItem()).
+                //        // Ideally it should be called like this: 
+                //        // Inventory.EraseItem(adjacentObject, adjacentObjectStartingX, adjacentObjectStartingY, adjacentObjectWidth);
 
-                        Inventory.EraseItem(adjacentObject, Inventory.skullStartX, Inventory.skullStartY, Inventory.skullWidth);
+                //        Inventory.EraseItem(adjacentObject, Inventory.skullStartX, Inventory.skullStartY, Inventory.skullWidth);
 
-                        // Call AddToInventory() with "objName" = the object we are next to.
-                        Inventory.AddToInventory(adjacentObject);
-                    }
-                    else if (Console.ReadKey(true).Key == ConsoleKey.N)
-                    {
-                        GameFrameBasics.ClearMessageBoard();
-                    }
+                //        // Call AddToInventory() with "objName" = the object we are next to.
+                //        Inventory.AddToInventory(adjacentObject);
+                //    }
+                //    else if (Console.ReadKey(true).Key == ConsoleKey.N)
+                //    {
+                //        GameFrameBasics.ClearMessageBoard();
+                //    }
                     
-                }
+                //}
 
                 PrintHero(currentHeroCoords, currentHeroPosition);
 

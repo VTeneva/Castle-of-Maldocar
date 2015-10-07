@@ -1,32 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+
 
 namespace _01.Game_Frame
 {
     public class SpecialCoordinates
     {
-        public static void SelectSpecialCoordinates(string key, Dictionary<string, List<string>> specialCoordsLevel, List<int> itemCoord)
+        public static List<Dictionary<string, int>> SelectSpecialCoordinates(string key, List<Dictionary<string, int>> itemCoord)
         {
-            try
-            {
-                specialCoordsLevel.Add(key, new List<string>());
-            }
-            catch (Exception)
-            {
-                goto SelectCoord;
-            }
+            List<Dictionary<string, int>> specialCoords = new List<Dictionary<string, int>>() ;
 
-            SelectCoord:
-            for (int col = -1; col < 2; col++)
+            foreach (var coord in itemCoord)
             {
-                for (int row = -1; row < 2; row++)
+                for (int col = -1; col < 2; col++)
                 {
-                    specialCoordsLevel[key].Add((itemCoord[0] + col) + "," + (itemCoord[1] + row));
+                    for (int row = -1; row < 2; row++)
+                    {
+                        Dictionary<string, int> special = new Dictionary<string, int>();
+                        special.Add("col", coord["col"] + col);
+                        special.Add("row", coord["row"] + col);
+
+                        specialCoords.Add(special);
+                    }
                 }
             }
+
+            return specialCoords;
         }
     }
 }

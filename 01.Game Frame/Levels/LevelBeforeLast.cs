@@ -17,8 +17,8 @@ namespace _01.Game_Frame
             // bool levelIsOver = false;
 
             HeroMovement levelBeforeLast = new HeroMovement();
-            levelBeforeLast.Movement(6, 25, "right", forbiddenCoordsLevelBeforeLast, specialCoordsLevelBeforeLast, 
-                MessagesSpecialLevelOne());
+            //levelBeforeLast.Movement(6, 25, "right", forbiddenCoordsLevelBeforeLast, specialCoordsLevelBeforeLast, 
+                //MessagesSpecialLevelOne());
         }
 
         // Forbidden coordinates specific for level Before Last.
@@ -116,63 +116,63 @@ namespace _01.Game_Frame
             }
 
 
-            foreach (string coord in coinsCoordinates)
-            {
-                List<int> currCoord = new List<int>();
-                currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-                GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], '$', ConsoleColor.Yellow, ConsoleColor.Black);
+            //foreach (string coord in coinsCoordinates)
+            //{
+            //    List<int> currCoord = new List<int>();
+            //    currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+            //    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], '$', ConsoleColor.Yellow, ConsoleColor.Black);
 
-                Dictionary<string, int> coin = new Dictionary<string, int>();
-                coin.Add("col", currCoord[0]);
-                coin.Add("row", currCoord[1]);
-                forbiddenCoordsLevelBeforeLast.Add(coin);
+            //    Dictionary<string, int> coin = new Dictionary<string, int>();
+            //    coin.Add("col", currCoord[0]);
+            //    coin.Add("row", currCoord[1]);
+            //    forbiddenCoordsLevelBeforeLast.Add(coin);
 
-                // Add coins to special coordinates.
-                SpecialCoordinates.SelectSpecialCoordinates("coin", specialCoordsLevelBeforeLast, currCoord);
-            }
+            //    // Add coins to special coordinates.
+            //    SpecialCoordinates.SelectSpecialCoordinates("coin", specialCoordsLevelBeforeLast, currCoord);
+            //}
             
-            foreach (string coord in crossCoordinates)
-            {
-                List<int> currCoord = new List<int>();
-                currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-                GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], ' ', ConsoleColor.DarkGray, ConsoleColor.DarkGray);
+            //foreach (string coord in crossCoordinates)
+            //{
+            //    List<int> currCoord = new List<int>();
+            //    currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+            //    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], ' ', ConsoleColor.DarkGray, ConsoleColor.DarkGray);
 
-                Dictionary<string, int> cross = new Dictionary<string, int>();
-                cross.Add("col", currCoord[0]);
-                cross.Add("row", currCoord[1]);
-                forbiddenCoordsLevelBeforeLast.Add(cross);
+            //    Dictionary<string, int> cross = new Dictionary<string, int>();
+            //    cross.Add("col", currCoord[0]);
+            //    cross.Add("row", currCoord[1]);
+            //    forbiddenCoordsLevelBeforeLast.Add(cross);
 
-                SpecialCoordinates.SelectSpecialCoordinates("grave", specialCoordsLevelBeforeLast, currCoord);
-            }
+            //    SpecialCoordinates.SelectSpecialCoordinates("grave", specialCoordsLevelBeforeLast, currCoord);
+            //}
             
-            GameFrameBasics.PrintSymbol(44, 29, 'X', ConsoleColor.Red, ConsoleColor.Black);
-            List<int> currCoordGrave = new List<int>();
-            currCoordGrave.Add(44);
-            currCoordGrave.Add(29);
-            SpecialCoordinates.SelectSpecialCoordinates("grave", specialCoordsLevelBeforeLast, currCoordGrave);
+            //GameFrameBasics.PrintSymbol(44, 29, 'X', ConsoleColor.Red, ConsoleColor.Black);
+            //List<int> currCoordGrave = new List<int>();
+            //currCoordGrave.Add(44);
+            //currCoordGrave.Add(29);
+            //SpecialCoordinates.SelectSpecialCoordinates("grave", specialCoordsLevelBeforeLast, currCoordGrave);
 
-            List<int> graveCoord = new List<int>();
-            Dictionary<string, int> grave = new Dictionary<string, int>();
-            grave.Add("col", 44);
-            grave.Add("row", 29);
-            forbiddenCoordsLevelBeforeLast.Add(grave);
+            //List<int> graveCoord = new List<int>();
+            //Dictionary<string, int> grave = new Dictionary<string, int>();
+            //grave.Add("col", 44);
+            //grave.Add("row", 29);
+            //forbiddenCoordsLevelBeforeLast.Add(grave);
 
-            GameCharacters.OldKing(14, 35);
-            for (int col = 14; col < 19; col++)
-            {
-                for (int row = 35; row  < 40; row ++)
-                {
-                    Dictionary<string, int> oldKing = new Dictionary<string, int>();
-                    oldKing.Add("col", col);
-                    oldKing.Add("row", row);
-                    forbiddenCoordsLevelBeforeLast.Add(oldKing);
+            //GameCharacters.OldKing(14, 35);
+            //for (int col = 14; col < 19; col++)
+            //{
+            //    for (int row = 35; row  < 40; row ++)
+            //    {
+            //        Dictionary<string, int> oldKing = new Dictionary<string, int>();
+            //        oldKing.Add("col", col);
+            //        oldKing.Add("row", row);
+            //        forbiddenCoordsLevelBeforeLast.Add(oldKing);
 
-                    List<int> currCoord = new List<int>();
-                    currCoord.Add(col);
-                    currCoord.Add(row);
-                    SpecialCoordinates.SelectSpecialCoordinates("oldKing", specialCoordsLevelBeforeLast, currCoord);
-                }
-            }
+            //        List<int> currCoord = new List<int>();
+            //        currCoord.Add(col);
+            //        currCoord.Add(row);
+            //        SpecialCoordinates.SelectSpecialCoordinates("oldKing", specialCoordsLevelBeforeLast, currCoord);
+            //    }
+            //}
         }
 
         // Objects coordinates
