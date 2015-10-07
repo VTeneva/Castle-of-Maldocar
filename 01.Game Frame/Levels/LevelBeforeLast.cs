@@ -118,7 +118,17 @@ namespace _01.Game_Frame
             {
                 forbiddenCoordsLevelBeforeLast.Add(coord);
             }
-                
+
+            foreach (var coord in coin2.Coordinates)
+            {
+                forbiddenCoordsLevelBeforeLast.Add(coord);
+            }
+
+            foreach (var coord in coin3.Coordinates)
+            {
+                forbiddenCoordsLevelBeforeLast.Add(coord);
+            }
+
             specialCoordsLevelBeforeLast.Add(coin1.Key, coin1.ObjectSpecialCoordinates);
             specialCoordsLevelBeforeLast.Add(coin2.Key, coin2.ObjectSpecialCoordinates);
             specialCoordsLevelBeforeLast.Add(coin3.Key, coin3.ObjectSpecialCoordinates);
@@ -130,6 +140,19 @@ namespace _01.Game_Frame
             objectsCoord.Add(coin1.Key, coin1.Coordinates);
             objectsCoord.Add(coin2.Key, coin2.Coordinates);
             objectsCoord.Add(coin3.Key, coin3.Coordinates);
+
+            // test - Skull
+            Skull skull = new Skull(34, 39, "skull");
+
+            foreach (var coord in skull.Coordinates)
+            {
+                forbiddenCoordsLevelBeforeLast.Add(coord);
+            }
+
+            specialCoordsLevelBeforeLast.Add(skull.Key, skull.ObjectSpecialCoordinates);
+            messagesSpecialLevelBeforeLast.Add(skull.Key, skull.MessageOnSpecial);
+            objectsCoord.Add(skull.Key, skull.Coordinates);
+
 
 
             //foreach (string coord in crossCoordinates)
