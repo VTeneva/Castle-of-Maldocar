@@ -9,17 +9,17 @@ namespace _01.Game_Frame
         {
             List<Dictionary<string, int>> specialCoords = new List<Dictionary<string, int>>() ;
 
-            foreach (var coord in itemCoord)
+            for (int i = 0; i < itemCoord.Count; i++)
             {
                 for (int col = -1; col < 2; col++)
                 {
                     for (int row = -1; row < 2; row++)
                     {
                         Dictionary<string, int> special = new Dictionary<string, int>();
-                        special.Add("col", coord["col"] + col);
-                        special.Add("row", coord["row"] + col);
-
+                        special.Add("col", itemCoord[i]["col"] + col);
+                        special.Add("row", itemCoord[i]["row"] + row);
                         specialCoords.Add(special);
+
                     }
                 }
             }

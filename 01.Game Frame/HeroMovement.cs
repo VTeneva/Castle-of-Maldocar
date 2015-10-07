@@ -79,9 +79,17 @@ namespace _01.Game_Frame
                 {
                     foreach (var item in obj.Value)
                     {
-                        if (item["col"] == currentHeroCoords["col"] && item["col"] == currentHeroCoords["col"])
+                        if ((item["col"] == currentHeroCoords["col"]) && (item["row"] == currentHeroCoords["row"]))
                         {
                             GameFrameBasics.MessageBoard(obj.Key, ConsoleColor.Yellow);
+                            if (Console.ReadKey(true).Key == ConsoleKey.Y)
+                            {
+                                GameFrameBasics.ClearMessageBoard();
+                            }
+                            else if (Console.ReadKey(true).Key == ConsoleKey.N)
+                            {
+                                GameFrameBasics.ClearMessageBoard();
+                            }
                         }
                     }
                 }
