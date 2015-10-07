@@ -75,7 +75,13 @@ namespace _01.Game_Frame
 
                 PrintHero(currentHeroCoords, currentHeroPosition);
 
-                string currCoord = currentHeroCoords["col"] + "," + currentHeroCoords["row"];
+                if (currentHeroCoords["col"] && currentHeroCoords["row"])
+                {
+
+                }
+
+
+                //string currCoord = currentHeroCoords["col"] + "," + currentHeroCoords["row"];
 
                 //if (specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key != null)
                 //{

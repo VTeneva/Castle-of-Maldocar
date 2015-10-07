@@ -46,8 +46,8 @@ namespace _01.Game_Frame
             music.Stop(Music.MusicTheme);*/
 
             //Level 1
-            LevelOne one = new LevelOne();
-            one.PlayLevel();
+            //LevelOne one = new LevelOne();
+            //one.PlayLevel();
 
             //Level 2
 
@@ -56,8 +56,8 @@ namespace _01.Game_Frame
 
 
             //Level BeforeLast
-            LevelBeforeLast beforeLast = new LevelBeforeLast();
-            beforeLast.PlayLevel();
+            //LevelBeforeLast beforeLast = new LevelBeforeLast();
+            //beforeLast.PlayLevel();
 			//Level Last
 			//LevelLast last = new LevelLast();
             //last.PlayLevel();

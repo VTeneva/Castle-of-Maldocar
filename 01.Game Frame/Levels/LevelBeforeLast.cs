@@ -113,9 +113,9 @@ namespace _01.Game_Frame
             Coin coin2 = new Coin(11, 14, "coinTwo");
             Coin coin3 = new Coin(11, 14, "coinThree");
 
-            foreach (var item in collection)
+            foreach (var coord in coin1.Coordinates)
             {
-                forbiddenCoordsLevelBeforeLast.Add();
+                forbiddenCoordsLevelBeforeLast.Add(coord);
             }
                 
             specialCoordsLevelBeforeLast.Add(coin1.Key, coin1.ObjectSpecialCoordinates);
