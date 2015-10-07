@@ -12,21 +12,38 @@ namespace _01.Game_Frame
 
             //Start Screen
             Console.CursorVisible = false;
-            FrontScreen.PrintFrontScreen();
+            //Victory Screen
+            VictoryScreen.PrintVictoryScreen();
 
-            // Music added
-            Music music = new Music();
-            music.Play();
+            // Victory Music
+            Music victoryMusic = new Music();
+            victoryMusic.Play(Music.VictoryTheme);
 
             if (Console.ReadKey(true).Key == ConsoleKey.N)
             {
-                music.Stop();
+                victoryMusic.Stop(Music.VictoryTheme);
             }
 
             GameFrameBasics.PressEnter();
 
             Console.Clear();
-            music.Stop();
+            victoryMusic.Stop(Music.VictoryTheme);
+            
+            /* FrontScreen.PrintFrontScreen();
+
+            // Music added
+            Music music = new Music();
+            music.Play(Music.MusicTheme);
+
+            if (Console.ReadKey(true).Key == ConsoleKey.N)
+            {
+                music.Stop(Music.MusicTheme);
+            }
+
+            GameFrameBasics.PressEnter();
+
+            Console.Clear();
+            music.Stop(Music.MusicTheme);*/
 
             //Level 1
             LevelOne one = new LevelOne();
@@ -41,6 +58,23 @@ namespace _01.Game_Frame
             //Level BeforeLast
             LevelBeforeLast beforeLast = new LevelBeforeLast();
             beforeLast.PlayLevel();
+
+            //Victory Screen
+            VictoryScreen.PrintVictoryScreen();
+
+            // Victory Music
+            //Music victoryMusic = new Music();
+            victoryMusic.Play(Music.VictoryTheme);
+
+            if (Console.ReadKey(true).Key == ConsoleKey.N)
+            {
+                victoryMusic.Stop(Music.VictoryTheme);
+            }
+
+            GameFrameBasics.PressEnter();
+
+            Console.Clear();
+            victoryMusic.Stop(Music.VictoryTheme);
         }
     }
 }

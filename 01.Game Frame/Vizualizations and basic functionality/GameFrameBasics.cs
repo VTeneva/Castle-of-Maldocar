@@ -26,7 +26,7 @@ namespace _01.Game_Frame
             }
 
             PrintString(62, 35, "INVENTORY", ConsoleColor.Yellow, ConsoleColor.Black);
-            PrintString(71, 36, "Gold: ", ConsoleColor.Yellow, ConsoleColor.Black);
+            PrintString(71, 36, "Gold: $", ConsoleColor.Yellow, ConsoleColor.Black);
         }
 
         public static void MessageBoard(string message, ConsoleColor color)
