@@ -9,23 +9,11 @@ namespace _01.Game_Frame
 
     public class Inventory
     {
-        // The inventory is an array <string> with the game adding stuff to the inventory at certain times.
-        string[] inventory = new string[8];
-        int drawAtX = 0;
-        int drawAtY = 0;
+        public static int skullStartX = 35;
+        public static int skullStartY = 29;
+        public static int skullWidth = 10;
 
-        int[,] inventoryStartPosition = 
-        {
-            /* x */ {54, 60, 67, 74 },
-            /* y */ {43, 48, 0, 0}
-                                
-        };
-
-        bool inventoryFull = true;
-        string messageToPrintOut = "Can't take item. Inventory full.";
-
-
-        public void DrawItem(string itemToBeDrawn, int x, int y)
+        public static void DrawItem(string itemToBeDrawn, int x, int y)
         {
             if (GameObject.InventoryDB().ContainsKey(itemToBeDrawn))
             {
@@ -61,7 +49,7 @@ namespace _01.Game_Frame
             //}
         }
 
-        public void EraseItem(string itemToBeErased, int x, int y, int width)
+        public static void EraseItem(string itemToBeErased, int x, int y, int width)
         {
             if (GameObject.InventoryDB().ContainsKey(itemToBeErased))
             {
@@ -84,8 +72,24 @@ namespace _01.Game_Frame
             }
         }
 
-        public string AddToInventory(string objName)
+        public static string AddToInventory(string objName)
         {
+
+            // The inventory is an array <string> with the game adding stuff to the inventory at certain times.
+            string[] inventory = new string[8];
+            int drawAtX = 0;
+            int drawAtY = 0;
+
+            int[,] inventoryStartPosition = 
+            {
+                /* x */ {54, 60, 67, 74 },
+                /* y */ {43, 48, 0, 0}
+                                
+            };
+
+            bool inventoryFull = true;
+            string messageToPrintOut = "Can't take item. Inventory full.";
+
             for (int i = 0; i < 8; i++)
             {
                 if (inventory[i] == null)
@@ -141,8 +145,8 @@ namespace _01.Game_Frame
             {
                 messageToPrintOut = objName + " has been added to the inventory.";
                 GameFrameBasics.MessageBoard(messageToPrintOut, ConsoleColor.White);
-                return "added";
                 DrawItem(objName, drawAtX, drawAtY);
+                return "added";
             }
         }
 

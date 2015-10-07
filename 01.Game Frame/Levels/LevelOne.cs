@@ -18,7 +18,7 @@ namespace _01.Game_Frame
             One();
 
             Inventory gameInventory = new Inventory();
-            gameInventory.DrawItem("skull", 35, 29);
+            Inventory.DrawItem("skull", 35, 29);
             //gameInventory.EraseItem("skull", 35, 29, 10);
 
             HeroMovement levelOneHeroMovement = new HeroMovement();

@@ -83,11 +83,19 @@ namespace _01.Game_Frame
 
                         GameFrameBasics.ClearMessageBoard();
                         // Check which is the object that we would take into the inventory.
-                        adjacentObject = messagesSpecial[specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key];
+                        adjacentObject = specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key;
+                        int adjacentObjectStartingX = 0;
+                        int adjacentObjectStartingY = 0;
+                        int adjacentObjectWidth = 0;
 
                         // Erase the object from the frame (with EraseItem()).
-                        // Call AddToInventory() with "objName" = the object we are next to.
+                        // Ideally it should be called like this: 
+                        // Inventory.EraseItem(adjacentObject, adjacentObjectStartingX, adjacentObjectStartingY, adjacentObjectWidth);
 
+                        Inventory.EraseItem(adjacentObject, Inventory.skullStartX, Inventory.skullStartY, Inventory.skullWidth);
+
+                        // Call AddToInventory() with "objName" = the object we are next to.
+                        Inventory.AddToInventory(adjacentObject);
                     }
                     else if (Console.ReadKey(true).Key == ConsoleKey.N)
                     {
