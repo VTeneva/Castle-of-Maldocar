@@ -32,8 +32,8 @@ namespace _01.Game_Frame
         // REFER TO THIS METHOD TO MAKE YOUR PLAYER MOVE
         public void Movement(int startingRow, int startingCol, 
             string currentHeroPosition, 
-            List<Dictionary<string, int>> forbiddenCoordsLevel, 
-            Dictionary<string, Dictionary<string, int>>  specialCoordsLevel,
+            List<Dictionary<string, int>> forbiddenCoordsLevel,
+            Dictionary<string, List<Dictionary<string, int>>> specialCoordsLevel,
             Dictionary<string, Dictionary<string, int>> itemsCoords,
             Dictionary<string, string> messagesSpecial)
         {

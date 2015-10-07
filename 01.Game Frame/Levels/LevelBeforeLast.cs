@@ -25,20 +25,13 @@ namespace _01.Game_Frame
         public List<Dictionary<string, int>> forbiddenCoordsLevelBeforeLast = new List<Dictionary<string, int>>();
 
         // "Special" coordinates - a message pops-up when the hero steps over them.
-        public Dictionary<string, List<string>> specialCoordsLevelBeforeLast = new Dictionary<string, List<string>>();
+        public Dictionary<string, List<Dictionary<string, int>>> specialCoordsLevelBeforeLast = new Dictionary<string, List<Dictionary<string, int>>>();
 
         // Messages - special coordinates.
+        public Dictionary<string, string> messagesSpecialLevelBeforeLast = new Dictionary<string, string>();
 
-        public Dictionary<string, string> MessagesSpecialLevelOne()
-        {
-            Dictionary<string, string> messagesSpecial = new Dictionary<string, string>();
-            messagesSpecial.Add("coin", "Whoa! You found a coin! Do you want to add it to your inventory? (Press <Y> for Yes)");
-            messagesSpecial.Add("oldKing", "Do you carry my precios coins? (Press <Y> to give Clennan 5 coins)");
-            messagesSpecial.Add("cross", @"What a creepy place? Why for god sake will anybody leave a grave still open? 
-                Should I leave something here?!...");
-            return messagesSpecial;
-        }
-
+        // Coordinates of objects.
+        public Dictionary<string, List<Dictionary<string, int>>> objectsCoord = new Dictionary<string, List<Dictionary<string, int>>>();
 
         // Printing the level's objects on the console.
         public void BeforeLast()
@@ -115,22 +108,29 @@ namespace _01.Game_Frame
                 forbiddenCoordsLevelBeforeLast.Add(hedge);
             }
 
+            // Coins - 3
+            Coin coin1 = new Coin(11, 14, "coinOne");
+            Coin coin2 = new Coin(11, 14, "coinTwo");
+            Coin coin3 = new Coin(11, 14, "coinThree");
 
-            //foreach (string coord in coinsCoordinates)
-            //{
-            //    List<int> currCoord = new List<int>();
-            //    currCoord = coord.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-            //    GameFrameBasics.PrintSymbol(currCoord[0], currCoord[1], '$', ConsoleColor.Yellow, ConsoleColor.Black);
+            foreach (var item in collection)
+            {
+                forbiddenCoordsLevelBeforeLast.Add();
+            }
+                
+            specialCoordsLevelBeforeLast.Add(coin1.Key, coin1.ObjectSpecialCoordinates);
+            specialCoordsLevelBeforeLast.Add(coin2.Key, coin2.ObjectSpecialCoordinates);
+            specialCoordsLevelBeforeLast.Add(coin3.Key, coin3.ObjectSpecialCoordinates);
 
-            //    Dictionary<string, int> coin = new Dictionary<string, int>();
-            //    coin.Add("col", currCoord[0]);
-            //    coin.Add("row", currCoord[1]);
-            //    forbiddenCoordsLevelBeforeLast.Add(coin);
+            messagesSpecialLevelBeforeLast.Add(coin1.Key, coin1.MessageOnSpecial);
+            messagesSpecialLevelBeforeLast.Add(coin2.Key, coin2.MessageOnSpecial);
+            messagesSpecialLevelBeforeLast.Add(coin3.Key, coin3.MessageOnSpecial);
 
-            //    // Add coins to special coordinates.
-            //    SpecialCoordinates.SelectSpecialCoordinates("coin", specialCoordsLevelBeforeLast, currCoord);
-            //}
-            
+            objectsCoord.Add(coin1.Key, coin1.Coordinates);
+            objectsCoord.Add(coin2.Key, coin2.Coordinates);
+            objectsCoord.Add(coin3.Key, coin3.Coordinates);
+
+
             //foreach (string coord in crossCoordinates)
             //{
             //    List<int> currCoord = new List<int>();
@@ -144,7 +144,7 @@ namespace _01.Game_Frame
 
             //    SpecialCoordinates.SelectSpecialCoordinates("grave", specialCoordsLevelBeforeLast, currCoord);
             //}
-            
+
             //GameFrameBasics.PrintSymbol(44, 29, 'X', ConsoleColor.Red, ConsoleColor.Black);
             //List<int> currCoordGrave = new List<int>();
             //currCoordGrave.Add(44);
@@ -182,10 +182,6 @@ namespace _01.Game_Frame
             "44,24",    "43,25",    "44,25",    "45,25",    "44,26",   "44,27"
         };
 
-        public List<string> coinsCoordinates = new List<string> {
-
-            "10,27",    "11,14",    "21,21",
-        };
 
         public List<string> treesCoordinates = new List<string> {
 
