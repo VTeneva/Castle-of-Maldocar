@@ -17,8 +17,9 @@ namespace _01.Game_Frame
             // bool levelIsOver = false;
 
             HeroMovement levelBeforeLast = new HeroMovement();
-            //levelBeforeLast.Movement(6, 25, "right", forbiddenCoordsLevelBeforeLast, specialCoordsLevelBeforeLast, 
-                //MessagesSpecialLevelOne());
+            levelBeforeLast.Movement(6, 25, "right", forbiddenCoordsLevelBeforeLast, specialCoordsLevelBeforeLast,
+                objectsCoord, messagesSpecialLevelBeforeLast);
+   
         }
 
         // Forbidden coordinates specific for level Before Last.
@@ -110,8 +111,8 @@ namespace _01.Game_Frame
 
             // Coins - 3
             Coin coin1 = new Coin(11, 14, "coinOne");
-            Coin coin2 = new Coin(11, 14, "coinTwo");
-            Coin coin3 = new Coin(11, 14, "coinThree");
+            Coin coin2 = new Coin(10, 27, "coinTwo");
+            Coin coin3 = new Coin(21, 21, "coinThree");
 
             foreach (var coord in coin1.Coordinates)
             {

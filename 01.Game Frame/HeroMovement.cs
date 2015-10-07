@@ -34,7 +34,7 @@ namespace _01.Game_Frame
             string currentHeroPosition, 
             List<Dictionary<string, int>> forbiddenCoordsLevel,
             Dictionary<string, List<Dictionary<string, int>>> specialCoordsLevel,
-            Dictionary<string, Dictionary<string, int>> itemsCoords,
+            Dictionary<string, List<Dictionary<string, int>>> itemsCoords,
             Dictionary<string, string> messagesSpecial)
         {
             Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  
@@ -75,13 +75,17 @@ namespace _01.Game_Frame
 
                 PrintHero(currentHeroCoords, currentHeroPosition);
 
-                if (currentHeroCoords["col"] && currentHeroCoords["row"])
+                foreach (var obj in specialCoordsLevel)
                 {
-
+                    foreach (var item in obj.Value)
+                    {
+                        if (item["col"] == currentHeroCoords["col"] && item["col"] == currentHeroCoords["col"])
+                        {
+                            GameFrameBasics.MessageBoard(obj.Key, ConsoleColor.Yellow);
+                        }
+                    }
                 }
 
-
-                //string currCoord = currentHeroCoords["col"] + "," + currentHeroCoords["row"];
 
                 //if (specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key != null)
                 //{
@@ -111,7 +115,7 @@ namespace _01.Game_Frame
                 //    {
                 //        GameFrameBasics.ClearMessageBoard();
                 //    }
-                    
+
                 //}
 
                 PrintHero(currentHeroCoords, currentHeroPosition);
