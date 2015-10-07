@@ -1,0 +1,6 @@
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Castle-of-Maldocar\01.Game Frame\bin\Debug\01.Game Frame.exe.config
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Castle-of-Maldocar\01.Game Frame\bin\Debug\01.Game Frame.exe
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Castle-of-Maldocar\01.Game Frame\bin\Debug\01.Game Frame.pdb
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Castle-of-Maldocar\01.Game Frame\obj\Debug\01.Game Frame.csprojResolveAssemblyReference.cache
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Castle-of-Maldocar\01.Game Frame\obj\Debug\01.Game Frame.exe
+E:\SoftUni\Advanced CSharp\Teamwork assignment\Castle-of-Maldocar\01.Game Frame\obj\Debug\01.Game Frame.pdb

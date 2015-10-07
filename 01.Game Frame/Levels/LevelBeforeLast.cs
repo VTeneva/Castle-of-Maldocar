@@ -33,8 +33,9 @@ namespace _01.Game_Frame
         {
             Dictionary<string, string> messagesSpecial = new Dictionary<string, string>();
             messagesSpecial.Add("coin", "Whoa! You found a coin! Do you want to add it to your inventory? (Press <Y> for Yes)");
-            messagesSpecial.Add("dwarf", "Do you carry my precios coins? (Press <Y> to give Clennan 10 coins)");
-
+            messagesSpecial.Add("oldKing", "Do you carry my precios coins? (Press <Y> to give Clennan 5 coins)");
+            messagesSpecial.Add("cross", @"What a creepy place? Why for god sake will anybody leave a grave still open? 
+                Should I leave something here?!...");
             return messagesSpecial;
         }
 
@@ -140,9 +141,16 @@ namespace _01.Game_Frame
                 cross.Add("col", currCoord[0]);
                 cross.Add("row", currCoord[1]);
                 forbiddenCoordsLevelBeforeLast.Add(cross);
+
+                SpecialCoordinates.SelectSpecialCoordinates("grave", specialCoordsLevelBeforeLast, currCoord);
             }
             
             GameFrameBasics.PrintSymbol(44, 29, 'X', ConsoleColor.Red, ConsoleColor.Black);
+            List<int> currCoordGrave = new List<int>();
+            currCoordGrave.Add(44);
+            currCoordGrave.Add(29);
+            SpecialCoordinates.SelectSpecialCoordinates("grave", specialCoordsLevelBeforeLast, currCoordGrave);
+
             List<int> graveCoord = new List<int>();
             Dictionary<string, int> grave = new Dictionary<string, int>();
             grave.Add("col", 44);
@@ -150,6 +158,21 @@ namespace _01.Game_Frame
             forbiddenCoordsLevelBeforeLast.Add(grave);
 
             GameCharacters.OldKing(14, 35);
+            for (int col = 14; col < 19; col++)
+            {
+                for (int row = 35; row  < 40; row ++)
+                {
+                    Dictionary<string, int> oldKing = new Dictionary<string, int>();
+                    oldKing.Add("col", col);
+                    oldKing.Add("row", row);
+                    forbiddenCoordsLevelBeforeLast.Add(oldKing);
+
+                    List<int> currCoord = new List<int>();
+                    currCoord.Add(col);
+                    currCoord.Add(row);
+                    SpecialCoordinates.SelectSpecialCoordinates("oldKing", specialCoordsLevelBeforeLast, currCoord);
+                }
+            }
         }
 
         // Objects coordinates
@@ -199,14 +222,13 @@ namespace _01.Game_Frame
             "24,32","25,32","26,32","27,32","28,32","29,32","30,32","31,32","33,32","7,33","9,33","11,33","33,33","7,34","9,34",
             "11,34","13,34","14,34","15,34","16,34","17,34","18,34","19,34","20,34","21,34","22,34","23,34","24,34","25,34","26,34",
             "27,34","28,34","29,34","30,34","31,34","33,34","7,35","9,35","11,35","13,35","31,35","33,35","7,36","9,36","11,36",
-            "13,36","31,36","33,36","7,37","9,37","11,37","13,37","15,37","29,37","31,37","33,37","7,38","9,38","11,38","13,38",
-            "29,38","31,38","33,38","7,39","9,39","11,39",
+            "13,36","31,36","33,36","7,37","9,37","11,37","13,37","29,37","31,37","33,37","7,38","9,38","11,38","13,38",
+            "29,38","31,38","33,38","7,39","9,39","11,39","18,25","35,9","35,10","35,11","35,12","35,13","35,14",
             "13,39","29,39","31,39","33,39","7,40","9,40","11,40","13,40","14,40","15,40","16,40","17,40","18,40","19,40","20,40",
             "21,40","22,40","23,40","24,40","25,40","26,40","27,40","28,40","29,40","31,40","33,40","7,41","9,41","11,41","31,41",
             "33,41","7,42","8,42","9,42","11,42","12,42","13,42","14,42","15,42","16,42","17,42","18,42","19,42","20,42","21,42",
             "22,42","23,42","24,42","25,42","26,42","27,42","28,42","29,42","30,42","31,42","33,42","33,43","7,9","8,9","9,9",
-            "10,9","11,9","12,9","13,9","14,9","23,9","16,10","17,10","18,10","19,10","20,10","21,10","22,10","23,10","15,38",
-            "18,25","35,9","35,10","35,11","35,12","35,13","35,14",
+            "10,9","11,9","12,9","13,9","14,9","23,9","16,10","17,10","18,10","19,10","20,10","21,10","22,10","23,10",  
         };
     }
 }
