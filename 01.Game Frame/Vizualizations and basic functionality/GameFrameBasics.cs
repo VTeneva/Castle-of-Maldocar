@@ -25,7 +25,8 @@ namespace _01.Game_Frame
                 PrintSymbol(x, 35, '*', ConsoleColor.Gray, ConsoleColor.DarkGray);
             }
 
-            PrintString(62, 37, "INVENTORY", ConsoleColor.Yellow, ConsoleColor.Black);
+            PrintString(62, 35, "INVENTORY", ConsoleColor.Yellow, ConsoleColor.Black);
+            PrintString(71, 36, "Gold: ", ConsoleColor.Yellow, ConsoleColor.Black);
         }
 
         public static void MessageBoard(string message, ConsoleColor color)
