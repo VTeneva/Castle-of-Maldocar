@@ -18,7 +18,7 @@ namespace _01.Game_Frame
 
             Instructions.PrintInstructions(Instructions.standartInstructions); //Instructions
             GameFrameBasics.GameFrame();
-            
+
 
             One();
             DisplayDialog.DisplayDialogInDialogBoard(LevelOneDialogs.levelOneDialogOne());
@@ -26,7 +26,9 @@ namespace _01.Game_Frame
 
             HeroMovement levelOneHeroMovement = new HeroMovement();
             levelOneHeroMovement.Movement(6, 25, "right", forbiddenCoordsLevelOne, specialCoordsLevelOne,
-                objectsCoord, messagesSpecialLevelOne);
+                objectsCoord, messagesSpecialLevelOne, LevelOneOver());
+
+
         }
 
         // Forbidden coordinates specific for level One.
@@ -120,6 +122,18 @@ namespace _01.Game_Frame
             //    // Add the skull's border fields to special coordinates.
             //    //SpecialCoordinates.SelectSpecialCoordinates("skull", specialCoordsLevelOne, currBorderCoord);
             //}
+        }
+
+        public bool LevelOneOver()
+        {
+            if (Inventory.currentInventory.Contains("skull"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         // Objects coords data
