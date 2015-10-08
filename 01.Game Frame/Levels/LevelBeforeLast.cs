@@ -21,8 +21,21 @@ namespace _01.Game_Frame
 
             HeroMovement levelBeforeLast = new HeroMovement();
             levelBeforeLast.Movement(6, 25, "right", forbiddenCoordsLevelBeforeLast, specialCoordsLevelBeforeLast,
-                objectsCoord, messagesSpecialLevelBeforeLast);
+                objectsCoord, messagesSpecialLevelBeforeLast, LevelBeforeLastOver());
    
+        }
+
+        public bool LevelBeforeLastOver()
+        {
+            if (Inventory.currentInventory.Contains("coin1") && Inventory.currentInventory.Contains("coin2")
+                && Inventory.currentInventory.Contains("coin3"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         // bool for end of the level

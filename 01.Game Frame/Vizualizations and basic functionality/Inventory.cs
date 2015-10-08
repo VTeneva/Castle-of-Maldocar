@@ -9,6 +9,8 @@ namespace _01.Game_Frame
 
     public class Inventory
     {
+        public static List<string> currentInventory = new List<string>();
+
         public static void DrawItem(string itemToBeDrawn, int x, int y)
         {
             if (GameObject.InventoryDB().ContainsKey(itemToBeDrawn))

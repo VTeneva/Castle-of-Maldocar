@@ -34,7 +34,8 @@ namespace _01.Game_Frame
             List<Dictionary<string, int>> forbiddenCoordsLevel,
             Dictionary<string, List<Dictionary<string, int>>> specialCoordsLevel,
             Dictionary<string, List<Dictionary<string, int>>> itemsCoords,
-            Dictionary<string, string> messagesSpecial)
+            Dictionary<string, string> messagesSpecial,
+            bool isOver)
         {
             List<string> alreadyTaken = new List<string>();
 
@@ -47,7 +48,7 @@ namespace _01.Game_Frame
 
             ConsoleKeyInfo keyInfo;
 
-            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
+            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter || isOver)
             {
                 GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.Black, ConsoleColor.Black);
 
@@ -99,14 +100,10 @@ namespace _01.Game_Frame
                                         alreadyTaken.Add(obj.Key);
 
                                         // Removes item from forbidden coordinates.
-
+                                        Inventory.currentInventory.Add(obj.Key);
 
                                     }
                                     else if (pressedKey.Key == ConsoleKey.N)
-                                    {
-                                        GameFrameBasics.ClearMessageBoard();
-                                    }
-                                    else if (pressedKey.Key == ConsoleKey.G)
                                     {
                                         GameFrameBasics.ClearMessageBoard();
                                     }

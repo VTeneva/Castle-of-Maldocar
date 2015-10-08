@@ -22,9 +22,9 @@ namespace _01.Game_Frame
                     }
                     else { color = Console.ForegroundColor = ConsoleColor.DarkCyan; }
 
-                    GameFrameBasics.MessageBoard(String.Format("{0}: {1}", speaker.Key, speaker.Value[line]), color);
+                    GameFrameBasics.MessageBoard(String.Format("{0}: {1} <Press ENTER to continue>", speaker.Key, speaker.Value[line]), color);
 
-                    Thread.Sleep(1000);
+                    GameFrameBasics.PressEnter();
 
                     GameFrameBasics.ClearMessageBoard();
                 }
