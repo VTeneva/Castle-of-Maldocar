@@ -26,7 +26,11 @@ namespace _01.Game_Frame
 
             HeroMovement levelOneHeroMovement = new HeroMovement();
             levelOneHeroMovement.Movement(6, 25, "right", forbiddenCoordsLevelOne, specialCoordsLevelOne,
-                objectsCoord, messagesSpecialLevelOne, LevelOneOver());
+                objectsCoord, messagesSpecialLevelOne, new List<string> { "skull"});
+
+            GameFrameBasics.MessageBoard("You have advanced to the next level! Press <ENTER> to continue.", ConsoleColor.DarkCyan);
+
+            GameFrameBasics.PressEnter();
 
 
         }

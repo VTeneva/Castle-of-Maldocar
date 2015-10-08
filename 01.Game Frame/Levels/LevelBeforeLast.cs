@@ -12,29 +12,32 @@ namespace _01.Game_Frame
             Console.CursorVisible = false;
 
             Instructions.PrintInstructions(Instructions.standartInstructions); //Instructions
-            GameFrameBasics.GameFrame();        
+            GameFrameBasics.GameFrame();
 
             LevelStaticObjects();
             BeforeLast();
-            
+
             // bool levelIsOver = false;
 
             HeroMovement levelBeforeLast = new HeroMovement();
             levelBeforeLast.Movement(6, 25, "right", forbiddenCoordsLevelBeforeLast, specialCoordsLevelBeforeLast,
-                objectsCoord, messagesSpecialLevelBeforeLast, LevelBeforeLastOver());
-   
+                objectsCoord, messagesSpecialLevelBeforeLast, new List<string> { "coin1", "coin2", "coin3" });
+
+            GameFrameBasics.MessageBoard("You have advanced to the next level! Press <ENTER> to continue.", ConsoleColor.DarkCyan);
+
         }
 
-        public bool LevelBeforeLastOver()
+        public static void LevelBeforeLastOver()
         {
+            bool isOver; 
             if (Inventory.currentInventory.Contains("coin1") && Inventory.currentInventory.Contains("coin2")
                 && Inventory.currentInventory.Contains("coin3"))
             {
-                return true;
+                isOver =  true;
             }
             else
             {
-                return false;
+                isOver =  false;
             }
         }
 

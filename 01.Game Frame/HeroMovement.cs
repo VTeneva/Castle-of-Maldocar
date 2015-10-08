@@ -35,7 +35,7 @@ namespace _01.Game_Frame
             Dictionary<string, List<Dictionary<string, int>>> specialCoordsLevel,
             Dictionary<string, List<Dictionary<string, int>>> itemsCoords,
             Dictionary<string, string> messagesSpecial,
-            bool isOver)
+            List<string> itemsToBeColected)
         {
             List<string> alreadyTaken = new List<string>();
 
@@ -48,7 +48,9 @@ namespace _01.Game_Frame
 
             ConsoleKeyInfo keyInfo;
 
-            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter || isOver)
+            bool isOver = false;
+
+            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter && !isOver)
             {
                 GameFrameBasics.PrintSymbol(currentHeroCoords["col"], currentHeroCoords["row"], ' ', ConsoleColor.Black, ConsoleColor.Black);
 
@@ -99,9 +101,27 @@ namespace _01.Game_Frame
                                         Inventory.EraseItem(itemsCoords[obj.Key]); // Deletes item.
                                         alreadyTaken.Add(obj.Key);
 
-                                        // Removes item from forbidden coordinates.
+                                        // Add item to inventory list.
                                         Inventory.currentInventory.Add(obj.Key);
 
+                                        int itemsFound = 0;
+                                        for (int i = 0; i < itemsToBeColected.Count; i++)
+                                        {                                            
+                                            for (int j = 0; j < Inventory.currentInventory.Count; j++)
+                                            {
+                                                if (itemsToBeColected[i].Equals(Inventory.currentInventory[j]))
+                                                {
+                                                    itemsFound++;
+                                                }                                             
+                                            }
+                                         }
+
+                                        if (itemsFound == itemsToBeColected.Count)
+                                        {
+                                            isOver = true;
+                                            GameFrameBasics.MessageBoard("You have advanced to the next level! Press <ENTER> to continue.", ConsoleColor.DarkCyan);
+                                        }
+                                        
                                     }
                                     else if (pressedKey.Key == ConsoleKey.N)
                                     {

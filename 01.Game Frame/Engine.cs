@@ -33,9 +33,8 @@ namespace _01.Game_Frame
             LevelOne one = new LevelOne();
             one.PlayLevel();
 
-
             //Level BeforeLast
-            LevelBeforeLast beforeLast = new LevelBeforeLast();          
+            LevelBeforeLast beforeLast = new LevelBeforeLast();
             beforeLast.PlayLevel();
 
             //Level Last
