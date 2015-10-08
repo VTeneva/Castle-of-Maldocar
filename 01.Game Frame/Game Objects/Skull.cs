@@ -15,7 +15,19 @@ namespace _01.Game_Frame
             this.PrintSkull(col, row);
 
             this.ObjectSpecialCoordinates = SpecialCoordinates.SelectSpecialCoordinates(Key, Coordinates);
+
+            this.Width = 10;
+
+            this.StartX = 35;
+
+            this.StartY = 29;
         }
+
+        public int Width { get; set; }
+
+        public int StartX { get; set; }
+
+        public int StartY { get; set; }
 
         public string Key { get; set; }
 

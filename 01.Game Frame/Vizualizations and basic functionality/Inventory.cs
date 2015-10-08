@@ -121,6 +121,7 @@ namespace _01.Game_Frame
                 messageToPrintOut = objName + " has been added to the inventory.";
                 GameFrameBasics.MessageBoard(messageToPrintOut, ConsoleColor.White);
                 DrawItem(objName, drawAtX, drawAtY);
+               // EraseItem(objName, )
                 return "added";
             }
         }

@@ -31,12 +31,24 @@ namespace _01.Game_Frame
                 @"   `---'  "
             });
 
-            // Test object - a sword
             InventoryDB.Add(
-                "sword",
+                "coinOne",
                 new List<string> {
-                    @"o-|====-",
+                @"$",
             });
+
+            InventoryDB.Add(
+               "coinTwo",
+               new List<string> {
+                @"$",
+            });
+
+            InventoryDB.Add(
+               "coinThree",
+               new List<string> {
+                @"$",
+            });
+
             return InventoryDB;
         }
     

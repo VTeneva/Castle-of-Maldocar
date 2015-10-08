@@ -91,6 +91,8 @@ namespace _01.Game_Frame
                                 if (pressedKey.Key == ConsoleKey.Y)
                                 {
                                     GameFrameBasics.ClearMessageBoard();
+                                    Inventory.AddToInventory(obj.Key);
+                                    //Inventory.EraseItem(obj.Key, obj.StartX, obj.StartY, obj.Width);
                                 }
                                 else if (pressedKey.Key == ConsoleKey.N)
                                 {
