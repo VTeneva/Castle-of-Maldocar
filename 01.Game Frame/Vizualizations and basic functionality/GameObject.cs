@@ -8,28 +8,6 @@ namespace _01.Game_Frame
 {
     public class GameObject
     {
-
-        //public void DrawGhost(int x, int y)
-        //{
-        //    Console.ResetColor();
-        //    Console.ForegroundColor = ConsoleColor.Gray;
-        //    Console.BackgroundColor = ConsoleColor.Black;
-        //    Console.SetCursorPosition(x, y);
-        //    Console.WriteLine(@"    .-.  ");
-        //    Console.SetCursorPosition(x, y + 1);
-        //    Console.WriteLine(@"   ( "") ");
-        //    Console.SetCursorPosition(x, y + 2);
-        //    Console.WriteLine(@"   .' '. ");
-        //    Console.SetCursorPosition(x, y + 3);
-        //    Console.WriteLine(@"  (     )");
-        //    Console.SetCursorPosition(x, y + 4);
-        //    Console.WriteLine(@"   ;   /`");
-        //    Console.SetCursorPosition(x, y + 5);
-        //    Console.WriteLine(@"(__'  /  ");
-        //    Console.SetCursorPosition(x, y + 6);
-        //    Console.WriteLine(@"`.__.'   ");
-        //}
-
         // The Database with all possible inventory objects
         public static Dictionary<string, List<string>> InventoryDB()
         {
@@ -53,18 +31,12 @@ namespace _01.Game_Frame
                 @"   `---'  "
             });
 
-            //InventoryDB.Add(
-            //   "ghost",
-            //   new List<string> {
-            //    @"    .-.  ",
-            //    @"   ( "") ",
-            //    @"   .' '. ",
-            //    @"  (     )",
-            //    @"   ;   /`",
-            //    @"(__'  /  ",
-            //    @"`.__.'   "
-            //});
-
+            // Test object - a sword
+            InventoryDB.Add(
+                "sword",
+                new List<string> {
+                    @"o-|====-",
+            });
             return InventoryDB;
         }
     

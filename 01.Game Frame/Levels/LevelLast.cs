@@ -11,6 +11,8 @@ namespace _01.Game_Frame
         {
             Console.Clear();
             Console.CursorVisible = false;
+            Instructions.PrintInstructions(Instructions.instructionsLast); //Instructions
+
             GameFrameBasics.GameFrame();
 
             while (!BossBattle())

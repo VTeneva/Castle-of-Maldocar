@@ -21,7 +21,9 @@ namespace _01.Game_Frame
             Console.Clear();
             Console.CursorVisible = false;
 
-            GameFrameBasics.GameFrame();
+            Instructions.PrintInstructions(Instructions.standartInstructions); //Instructions
+            GameFrameBasics.GameFrame();        
+
             LevelStaticObjects();
             BeforeLast();
 

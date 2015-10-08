@@ -9,44 +9,20 @@ namespace _01.Game_Frame
 
     public class Inventory
     {
-        public static int skullStartX = 35;
-        public static int skullStartY = 29;
-        public static int skullWidth = 10;
-
         public static void DrawItem(string itemToBeDrawn, int x, int y)
         {
             if (GameObject.InventoryDB().ContainsKey(itemToBeDrawn))
             {
-                Console.SetCursorPosition(x, y-1); // -1 To avoid printing the second line on top of the first line in the second loop iteration
+                Console.SetCursorPosition(x, y - 1); // -1 To avoid printing the second line on top of the first line in the second loop iteration
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
                 for (int i = 0; i < GameObject.InventoryDB()[itemToBeDrawn].Count; i++)
                 {
-                   Console.Write(GameObject.InventoryDB()[itemToBeDrawn][i]);
-                   Console.WriteLine();
-                   Console.SetCursorPosition(x, y + i);
+                    Console.Write(GameObject.InventoryDB()[itemToBeDrawn][i]);
+                    Console.WriteLine();
+                    Console.SetCursorPosition(x, y + i);
                 }
             }
-            // Test data
-            //List<string> testObject = new List<string> 
-            //    {
-            //        @"  .-'''-. ",
-            //        @" / _   _ \",
-            //        @" ](_' `_)[",
-            //        @" `-. N ,-'",
-            //        @"   `---'  "
-            //    };
-
-            //Console.SetCursorPosition(35, 30);
-            //Console.BackgroundColor = ConsoleColor.Black;
-            //Console.ForegroundColor = ConsoleColor.White;
-            //for (int i = 0; i < testObject.Count; i++)
-            //{
-            //    Console.Write(testObject[i]);
-            //    Console.WriteLine();
-            //    Console.SetCursorPosition(35, 31 + i);
-                
-            //}
         }
 
         public static void EraseItem(string itemToBeErased, int x, int y, int width)
@@ -74,7 +50,6 @@ namespace _01.Game_Frame
 
         public static string AddToInventory(string objName)
         {
-
             // The inventory is an array <string> with the game adding stuff to the inventory at certain times.
             string[] inventory = new string[8];
             int drawAtX = 0;
@@ -138,7 +113,7 @@ namespace _01.Game_Frame
 
             if (inventoryFull == true)
             {
-                GameFrameBasics.MessageBoard(messageToPrintOut, ConsoleColor.Red); //Error with MessageBoard(); not being visible from Inventory.cs
+                GameFrameBasics.MessageBoard(messageToPrintOut, ConsoleColor.Red); 
                 return "not added";
             }
             else
