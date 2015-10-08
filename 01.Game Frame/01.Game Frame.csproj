@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dialogs.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Dialogs\LevelOneDialogs.cs" />
     <Compile Include="Game Objects\Coin.cs" />
@@ -59,7 +58,6 @@
     <Compile Include="Vizualizations and basic functionality\DisplayDialog.cs" />
     <Compile Include="Vizualizations and basic functionality\GameObject.cs" />
     <Compile Include="Levels\LevelBeforeLast.cs" />
-    <Compile Include="Levels\LevelThree.cs" />
     <Compile Include="Vizualizations and basic functionality\FrontScreen.cs" />
     <Compile Include="Levels\LevelOne.cs" />
     <Compile Include="Vizualizations and basic functionality\GameCharacters.cs" />
@@ -67,7 +65,6 @@
     <Compile Include="HeroMovement.cs" />
     <Compile Include="Vizualizations and basic functionality\Inventory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Levels\LevelTwo.cs" />
     <Compile Include="Vizualizations and basic functionality\SpecialCoordinates.cs" />
     <Compile Include="Vizualizations and basic functionality\VictoryScreen.cs" />
   </ItemGroup>

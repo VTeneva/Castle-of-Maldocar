@@ -12,25 +12,22 @@ namespace _01.Game_Frame
         public static int skullCoordsY = 29;
 
         public void PlayLevel()
-        {
-
-            
-
+        {                       
             Console.Clear();
             Console.CursorVisible = false;
 
+            Instructions.PrintInstructions(Instructions.standartInstructions); //Instructions
             GameFrameBasics.GameFrame();
-            One();
+            
 
-            //Inventory gameInventory = new Inventory();
-            //Inventory.DrawItem("skull", 35, 29);
-            //gameInventory.EraseItem("skull", 35, 29, 10);
+            One();
+            DisplayDialog.DisplayDialogInDialogBoard(LevelOneDialogs.levelOneDialogOne());
+
 
             HeroMovement levelOneHeroMovement = new HeroMovement();
             levelOneHeroMovement.Movement(6, 25, "right", forbiddenCoordsLevelOne, specialCoordsLevelOne,
                 objectsCoord, messagesSpecialLevelOne);
         }
-
 
         // Forbidden coordinates specific for level One.
         public List<Dictionary<string, int>> forbiddenCoordsLevelOne = new List<Dictionary<string, int>>();

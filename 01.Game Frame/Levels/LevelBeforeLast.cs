@@ -1,14 +1,4 @@
-﻿// Shovel -     |D---(];
-// Shovel - 
-// _
-// V 
-// | 
-//_|_
-//\ /
-// ' 
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,15 +16,25 @@ namespace _01.Game_Frame
 
             LevelStaticObjects();
             BeforeLast();
-
-            DisplayDialog.DisplayDialogInDialogBoard(LevelOneDialogs.levelOneDialogOne());
-
+            
             // bool levelIsOver = false;
 
             HeroMovement levelBeforeLast = new HeroMovement();
             levelBeforeLast.Movement(6, 25, "right", forbiddenCoordsLevelBeforeLast, specialCoordsLevelBeforeLast,
                 objectsCoord, messagesSpecialLevelBeforeLast);
    
+        }
+
+        // bool for end of the level
+        public static bool EndLevelBeforeLast()
+        {
+            bool isLevelOver = false;
+            if (true)
+            {
+                isLevelOver = true;
+            }
+
+            return isLevelOver;
         }
 
         // Forbidden coordinates specific for level Before Last.

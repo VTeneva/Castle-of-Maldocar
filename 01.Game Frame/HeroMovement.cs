@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace _01.Game_Frame
 {
@@ -37,6 +36,8 @@ namespace _01.Game_Frame
             Dictionary<string, List<Dictionary<string, int>>> itemsCoords,
             Dictionary<string, string> messagesSpecial)
         {
+            List<string> alreadyTaken = new List<string>();
+
             Dictionary<string, int> currentHeroCoords = new Dictionary<string, int>();  
             currentHeroCoords.Add("col", startingRow);  
             currentHeroCoords.Add("row", startingCol);
@@ -79,65 +80,41 @@ namespace _01.Game_Frame
                 {
                     foreach (var item in obj.Value)
                     {
-                        if ((item["col"] == currentHeroCoords["col"]) && (item["row"] == currentHeroCoords["row"]))
+                        if (!alreadyTaken.Contains(obj.Key)) // Removes special messages.
                         {
-                            if (messagesSpecial.ContainsKey(obj.Key))
+                            if ((item["col"] == currentHeroCoords["col"]) && (item["row"] == currentHeroCoords["row"]))
                             {
-                                // Prints a message in message board.
-                                GameFrameBasics.MessageBoard(messagesSpecial[obj.Key], ConsoleColor.DarkCyan);
+                                if (messagesSpecial.ContainsKey(obj.Key))
+                                {
+                                    // Prints a message in message board.
+                                    GameFrameBasics.MessageBoard(messagesSpecial[obj.Key], ConsoleColor.DarkCyan);
 
-                                ConsoleKeyInfo pressedKey = Console.ReadKey(true);
+                                    ConsoleKeyInfo pressedKey = Console.ReadKey(true);
 
-                                if (pressedKey.Key == ConsoleKey.Y)
-                                {
-                                    GameFrameBasics.ClearMessageBoard();
-                                    Inventory.AddToInventory(obj.Key);
-                                    //Inventory.EraseItem(obj.Key, obj.StartX, obj.StartY, obj.Width);
-                                }
-                                else if (pressedKey.Key == ConsoleKey.N)
-                                {
-                                    GameFrameBasics.ClearMessageBoard();
-                                }
-                                else if (pressedKey.Key == ConsoleKey.G)
-                                {
-                                    GameFrameBasics.ClearMessageBoard();
+                                    if (pressedKey.Key == ConsoleKey.Y)
+                                    {
+                                        GameFrameBasics.ClearMessageBoard();
+                                        Inventory.AddToInventory(obj.Key); // Adds item to inventory.
+                                        Inventory.EraseItem(itemsCoords[obj.Key]); // Deletes item.
+                                        alreadyTaken.Add(obj.Key);
+
+                                        // Removes item from forbidden coordinates.
+
+
+                                    }
+                                    else if (pressedKey.Key == ConsoleKey.N)
+                                    {
+                                        GameFrameBasics.ClearMessageBoard();
+                                    }
+                                    else if (pressedKey.Key == ConsoleKey.G)
+                                    {
+                                        GameFrameBasics.ClearMessageBoard();
+                                    }
                                 }
                             }
                         }
                     }
                 }
-
-
-                //if (specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key != null)
-                //{
-                //    GameFrameBasics.MessageBoard(messagesSpecial[specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key], ConsoleColor.Cyan);
-
-                //    if (Console.ReadKey(true).Key == ConsoleKey.Y)
-                //    {
-                //        string adjacentObject = null;
-
-                //        GameFrameBasics.ClearMessageBoard();
-                //        // Check which is the object that we would take into the inventory.
-                //        adjacentObject = specialCoordsLevel.FirstOrDefault(x => x.Value.Contains(currCoord)).Key;
-                //        int adjacentObjectStartingX = 0;
-                //        int adjacentObjectStartingY = 0;
-                //        int adjacentObjectWidth = 0;
-
-                //        // Erase the object from the frame (with EraseItem()).
-                //        // Ideally it should be called like this: 
-                //        // Inventory.EraseItem(adjacentObject, adjacentObjectStartingX, adjacentObjectStartingY, adjacentObjectWidth);
-
-                //        Inventory.EraseItem(adjacentObject, Inventory.skullStartX, Inventory.skullStartY, Inventory.skullWidth);
-
-                //        // Call AddToInventory() with "objName" = the object we are next to.
-                //        Inventory.AddToInventory(adjacentObject);
-                //    }
-                //    else if (Console.ReadKey(true).Key == ConsoleKey.N)
-                //    {
-                //        GameFrameBasics.ClearMessageBoard();
-                //    }
-
-                //}
 
                 PrintHero(currentHeroCoords, currentHeroPosition);
 

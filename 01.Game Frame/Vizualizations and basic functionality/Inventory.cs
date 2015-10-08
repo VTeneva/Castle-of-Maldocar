@@ -25,27 +25,18 @@ namespace _01.Game_Frame
             }
         }
 
-        public static void EraseItem(string itemToBeErased, int x, int y, int width)
+        public static void EraseItem(List<Dictionary<string, int>> itemsCoords)
         {
-            if (GameObject.InventoryDB().ContainsKey(itemToBeErased))
+            for (int coord = 0; coord < itemsCoords.Count; coord++)
             {
-                y--;
-                Console.SetCursorPosition(x, y);
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.Black;
-
-                Console.SetCursorPosition(x, y);
-                for (int i = y; i <= y + GameObject.InventoryDB()[itemToBeErased].Count; i++)
+                foreach (var rowCol in itemsCoords[coord])
                 {
-                    
-                    for (int j = x; j < x + width; j++)
-                    {
-                        Console.Write(" ");    
-                    }
-                    Console.SetCursorPosition(x, i);
+                    Console.SetCursorPosition(itemsCoords[coord]["col"], itemsCoords[coord]["row"]);
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine(" ");
                 }
-
-            }
+            }         
         }
 
         public static string AddToInventory(string objName)

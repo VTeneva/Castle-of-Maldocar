@@ -6,7 +6,6 @@ namespace _01.Game_Frame
 {
     class LevelLast
     {
-
         public void PlayLevel()
         {
             Console.Clear();
