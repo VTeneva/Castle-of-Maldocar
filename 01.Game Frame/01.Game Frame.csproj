@@ -49,6 +49,7 @@
     <Compile Include="Dialogs\LevelOneDialogs.cs" />
     <Compile Include="Game Objects\Coin.cs" />
     <Compile Include="Game Objects\Skull.cs" />
+    <Compile Include="GlobalConstants.cs" />
     <Compile Include="Levels\LevelLast.cs" />
     <Compile Include="Vizualizations and basic functionality\Music.cs" />
     <Compile Include="Vizualizations and basic functionality\DisplayDialog.cs" />
