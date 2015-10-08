@@ -55,7 +55,7 @@ namespace _01.Game_Frame
             beforeLast.PlayLevel();
 
 
-            Level Last
+            //Level Last
             LevelLast last = new LevelLast();
             last.PlayLevel();
 
