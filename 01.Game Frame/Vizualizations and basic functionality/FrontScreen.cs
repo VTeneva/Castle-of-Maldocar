@@ -12,7 +12,7 @@ namespace _01.Game_Frame
         // Front screen - 63 symbols
         public static void PrintFrontScreen()
         {
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             using (StreamReader reader = new StreamReader("../../Start_screen.txt"))
             {
