@@ -84,17 +84,19 @@ namespace _01.Game_Frame
                             if (messagesSpecial.ContainsKey(obj.Key))
                             {
                                 // Prints a message in message board.
-                                GameFrameBasics.MessageBoard(messagesSpecial[obj.Key], ConsoleColor.Yellow);
+                                GameFrameBasics.MessageBoard(messagesSpecial[obj.Key], ConsoleColor.DarkCyan);
 
-                                if (Console.ReadKey(true).Key == ConsoleKey.Y)
+                                ConsoleKeyInfo pressedKey = Console.ReadKey(true);
+
+                                if (pressedKey.Key == ConsoleKey.Y)
                                 {
                                     GameFrameBasics.ClearMessageBoard();
                                 }
-                                else if (Console.ReadKey(true).Key == ConsoleKey.N)
+                                else if (pressedKey.Key == ConsoleKey.N)
                                 {
                                     GameFrameBasics.ClearMessageBoard();
                                 }
-                                else if (Console.ReadKey(true).Key == ConsoleKey.G)
+                                else if (pressedKey.Key == ConsoleKey.G)
                                 {
                                     GameFrameBasics.ClearMessageBoard();
                                 }

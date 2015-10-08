@@ -82,9 +82,26 @@ namespace _01.Game_Frame
             objectsCoord.Add(oldKing.Key, oldKing.Coordinates);
 
             // Cross
+            Cross cross = new Cross(43, 24, "cross");
+            foreach (var coord in cross.Coordinates)
+            {
+                forbiddenCoordsLevelBeforeLast.Add(coord);
+            }
+
+            specialCoordsLevelBeforeLast.Add(cross.Key, cross.ObjectSpecialCoordinates);
+            messagesSpecialLevelBeforeLast.Add(cross.Key, cross.MessageOnSpecial);
+            objectsCoord.Add(cross.Key, cross.Coordinates);
 
             // Grave
+            Grave grave = new Grave(43, 29, "grave");
+            foreach (var coord in grave.Coordinates)
+            {
+                forbiddenCoordsLevelBeforeLast.Add(coord);
+            }
 
+            specialCoordsLevelBeforeLast.Add(grave.Key, grave.ObjectSpecialCoordinates);
+            messagesSpecialLevelBeforeLast.Add(grave.Key, grave.MessageOnSpecial);
+            objectsCoord.Add(grave.Key, grave.Coordinates);
 
 
             //GameFrameBasics.PrintSymbol(44, 29, 'X', ConsoleColor.Red, ConsoleColor.Black);

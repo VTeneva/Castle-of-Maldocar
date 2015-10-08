@@ -6,37 +6,35 @@ using System.Threading.Tasks;
 
 namespace _01.Game_Frame
 {
-    class Cross
+    class Grave
     {
-        public Cross(int col, int row, string nameKey)
+        public Grave(int col, int row, string nameKey)
         {
             this.Key = nameKey;
 
-            this.PrintCross(col, row);
+            this.PrintGrave(col, row);
 
             this.ObjectSpecialCoordinates = SpecialCoordinates.SelectSpecialCoordinates(Key, Coordinates);
         }
 
         public string Key { get; set; }
-
         public string[] Object = new string[] {
-                @" # ",
-                @"###",
-                @" # ",
-                @" # ",
+                @"[O]",
                 };
 
-        public List<ConsoleColor> ColorsBack = new List<ConsoleColor> { ConsoleColor.Gray, ConsoleColor.Black };
-        public List<ConsoleColor> Colors = new List<ConsoleColor> { ConsoleColor.DarkGray };
+        public List<ConsoleColor> ColorsBack = new List<ConsoleColor> { ConsoleColor.Black };
+        public List<ConsoleColor> Colors = new List<ConsoleColor> { ConsoleColor.DarkRed };
 
         public List<Dictionary<string, int>> Coordinates = new List<Dictionary<string, int>>();
 
         public List<Dictionary<string, int>> ObjectSpecialCoordinates { get; set; }
-        public string MessageOnSpecial = @"What a creepy place! I can feel the silence...Oh, God! Why is this grave still open? I might dig somehing....";
+        public string MessageOnSpecial = @"Hmm! I have the strange feeling that I know what to dig into this grave... Press <G> to use the shovel";
 
-        public void PrintCross(int col, int row)
+        public void PrintGrave(int col, int row)
         {
             Console.SetCursorPosition(col, row);
+            Console.ForegroundColor = Colors[0];
+            Console.BackgroundColor = ColorsBack[0];
 
             List<Dictionary<string, int>> coorDict = new List<Dictionary<string, int>>();
             for (int top = 0; top < this.Object.Length; top++)
@@ -49,17 +47,10 @@ namespace _01.Game_Frame
                     coorDict.Add(coor);
 
                     Console.SetCursorPosition(coor["col"], coor["row"]);
-
-                    Console.ForegroundColor = Colors[0];
-                    Console.BackgroundColor = ColorsBack[0];
-
-                    if (this.Object[top][left] == ' ')
-                    {
-                        Console.BackgroundColor = ColorsBack[1];
-                    }
                     Console.Write(this.Object[top][left]);
                 }
             }
+
             this.Coordinates = coorDict;
         }
     }

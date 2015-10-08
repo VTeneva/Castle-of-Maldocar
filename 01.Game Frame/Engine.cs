@@ -54,16 +54,15 @@ namespace _01.Game_Frame
             LevelBeforeLast beforeLast = new LevelBeforeLast();
             beforeLast.PlayLevel();
 
-
-            //Level Last
-            LevelLast last = new LevelLast();
-            last.PlayLevel();
+            ////Level Last
+            //LevelLast last = new LevelLast();
+            //last.PlayLevel();
 
             ////Victory Screen
-            //VictoryScreen.PrintVictoryScreen();
+            VictoryScreen.PrintVictoryScreen();
 
-            //// Victory Music
-            ////Music victoryMusic = new Music();
+            ////// Victory Music
+            //Music victoryMusic = new Music();
             //victoryMusic.Play(Music.VictoryTheme);
 
             //if (Console.ReadKey(true).Key == ConsoleKey.N)
