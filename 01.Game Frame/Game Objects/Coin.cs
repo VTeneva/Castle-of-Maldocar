@@ -25,8 +25,7 @@ namespace _01.Game_Frame
         public List<Dictionary<string, int>> Coordinates = new List<Dictionary<string, int>>();
 
         public List<Dictionary<string, int>> ObjectSpecialCoordinates { get; set; }
-        public string MessageOnSpecial = @"Whoa! You found a coin! Do you want to add 
-            it to your inventory? (Press <Y> for Yes)";
+        public string MessageOnSpecial = @"Whoa! You found a coin! Do you want to add it to your inventory? (Press <Y> for Yes)";
 
         public void PrintCoin(int col, int row)
         {
@@ -39,15 +38,13 @@ namespace _01.Game_Frame
             {
                 for (int left = 0; left < this.Object[top].Length; left++)
                 {
-                    Console.Write(this.Object[top][left]);
-
-
                     Dictionary<string, int> coor = new Dictionary<string, int>();
                     coor.Add("col", left + col);
                     coor.Add("row", top + row);
                     coorDict.Add(coor);
 
                     Console.SetCursorPosition(coor["col"], coor["row"]);
+                    Console.Write(this.Object[top][left]);
                 }
             }
 

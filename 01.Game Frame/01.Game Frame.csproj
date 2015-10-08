@@ -48,6 +48,8 @@
     <Compile Include="Engine.cs" />
     <Compile Include="Dialogs\LevelOneDialogs.cs" />
     <Compile Include="Game Objects\Coin.cs" />
+    <Compile Include="Game Objects\Cross.cs" />
+    <Compile Include="Game Objects\OldKing.cs" />
     <Compile Include="Game Objects\Skull.cs" />
     <Compile Include="GlobalConstants.cs" />
     <Compile Include="Levels\LevelLast.cs" />

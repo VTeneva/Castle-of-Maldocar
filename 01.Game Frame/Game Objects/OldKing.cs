@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace _01.Game_Frame
 {
-    class Skull
+    class OldKing
     {
-        public Skull(int col, int row, string nameKey)
+        public OldKing(int col, int row, string nameKey)
         {
             this.Key = nameKey;
 
-            this.PrintSkull(col, row);
+            this.PrintOldKing(col, row);
 
             this.ObjectSpecialCoordinates = SpecialCoordinates.SelectSpecialCoordinates(Key, Coordinates);
         }
@@ -20,23 +20,22 @@ namespace _01.Game_Frame
         public string Key { get; set; }
 
         public string[] Object = new string[] {
-                @"  .-'''-. ",
-                @" / _   _ \",
-                @" ](_' `_)[",
-                @" `-. N ,-'",
-                @"   `---'  "
+                @" MMM ",
+                @" o,O ",
+                @"'{(}'",
+                @" o o ",
                 };
 
-        public List<ConsoleColor> ColorsBack = new List<ConsoleColor> { ConsoleColor.Black };
-        public List<ConsoleColor> Colors = new List<ConsoleColor> { ConsoleColor.Gray };
+        public List<ConsoleColor> ColorsBack = new List<ConsoleColor> { ConsoleColor.Black, ConsoleColor.White };
+        public List<ConsoleColor> Colors = new List<ConsoleColor> { ConsoleColor.Yellow, ConsoleColor.Black,
+            ConsoleColor.White, ConsoleColor.Red, ConsoleColor.Blue };
 
         public List<Dictionary<string, int>> Coordinates = new List<Dictionary<string, int>>();
 
         public List<Dictionary<string, int>> ObjectSpecialCoordinates { get; set; }
-        public string MessageOnSpecial = @"Whoa! You found a SKULL! Do you want to add 
-            it to your inventory? (Press <Y> for Yes)"; // Change this one
+        public string MessageOnSpecial = @"Look at this old king here. Poor old man! Some gold will might bring his smile back. Press <G> to give him 5 coins or press <N> to ignore his sorrow. "; 
 
-        public void PrintSkull(int col, int row)
+        public void PrintOldKing(int col, int row)
         {
             Console.SetCursorPosition(col, row);
             Console.ForegroundColor = Colors[0];
@@ -56,7 +55,6 @@ namespace _01.Game_Frame
                     Console.Write(this.Object[top][left]);
                 }
             }
-
             this.Coordinates = coorDict;
         }
     }

@@ -81,14 +81,23 @@ namespace _01.Game_Frame
                     {
                         if ((item["col"] == currentHeroCoords["col"]) && (item["row"] == currentHeroCoords["row"]))
                         {
-                            GameFrameBasics.MessageBoard(obj.Key, ConsoleColor.Yellow);
-                            if (Console.ReadKey(true).Key == ConsoleKey.Y)
+                            if (messagesSpecial.ContainsKey(obj.Key))
                             {
-                                GameFrameBasics.ClearMessageBoard();
-                            }
-                            else if (Console.ReadKey(true).Key == ConsoleKey.N)
-                            {
-                                GameFrameBasics.ClearMessageBoard();
+                                // Prints a message in message board.
+                                GameFrameBasics.MessageBoard(messagesSpecial[obj.Key], ConsoleColor.Yellow);
+
+                                if (Console.ReadKey(true).Key == ConsoleKey.Y)
+                                {
+                                    GameFrameBasics.ClearMessageBoard();
+                                }
+                                else if (Console.ReadKey(true).Key == ConsoleKey.N)
+                                {
+                                    GameFrameBasics.ClearMessageBoard();
+                                }
+                                else if (Console.ReadKey(true).Key == ConsoleKey.G)
+                                {
+                                    GameFrameBasics.ClearMessageBoard();
+                                }
                             }
                         }
                     }
