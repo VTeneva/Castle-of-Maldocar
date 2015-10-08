@@ -17,8 +17,8 @@ namespace _01.Game_Frame
                     @"If you think you're very tough, we'll see how you'll fare with the Poena Finalis! That's not enough for you, eh? But that's not the worst of it by far.",
                     @"That's not what Poena Finalis is, you fool, no! ( He pauses for a bit and continues in a hushed voice.)He will make you decline Latin nouns!",
                     @"But wait! If it's not me, then it must be the master who put you here.",
-                    @"Haha, do you mean to scare me, prisoner? It's you who will rot in this cell… ",
                     @"Oh, I know better than to talk about the master. You will not trick me. The master will reveal himself to you when he decides.",
+                    @"The guard walks away before you can continue."
                 });
 
             DialogOne.Add(
@@ -29,10 +29,10 @@ namespace _01.Game_Frame
                     @" Such as?",
                     @" Hmpf!",
                     @" The what? Let me tell you, I've never in my life caught any veneric diseases...",
-                    @" My god, no! What monster is this master of yours?!  All I remember is I got hit on the head…",
-                    @" I am a powerful mage and unless you release me this moment, I'll have your blood boil and burn you from the inside.",
+                    @" My god, no! What monster is this master of yours?!",
                     @" Who is this master of yours?",
                     @" Wait, I still have to ask...",
+                    @" ..."
                 });
             return DialogOne;          
         }        
