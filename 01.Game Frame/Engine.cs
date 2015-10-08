@@ -12,28 +12,12 @@ namespace _01.Game_Frame
 
             //Start Screen
             Console.CursorVisible = false;
-            //Victory Screen
-            //VictoryScreen.PrintVictoryScreen();
-
-            //// Victory Music
-            //Music victoryMusic = new Music();
-            //victoryMusic.Play(Music.VictoryTheme);
-
-            //if (Console.ReadKey(true).Key == ConsoleKey.N)
-            //{
-            //    victoryMusic.Stop(Music.VictoryTheme);
-            //}
-
-            //GameFrameBasics.PressEnter();
-
-            //Console.Clear();
-            //victoryMusic.Stop(Music.VictoryTheme);
-
-            /* FrontScreen.PrintFrontScreen();
+            FrontScreen.PrintFrontScreen();
 
             // Music added
             Music music = new Music();
             music.Play(Music.MusicTheme);
+
 
             if (Console.ReadKey(true).Key == ConsoleKey.N)
             {
@@ -43,7 +27,7 @@ namespace _01.Game_Frame
             GameFrameBasics.PressEnter();
 
             Console.Clear();
-            music.Stop(Music.MusicTheme);*/
+            music.Stop(Music.MusicTheme);
 
             //Level 1
             //LevelOne one = new LevelOne();
@@ -54,26 +38,26 @@ namespace _01.Game_Frame
             LevelBeforeLast beforeLast = new LevelBeforeLast();
             beforeLast.PlayLevel();
 
-            ////Level Last
-            //LevelLast last = new LevelLast();
-            //last.PlayLevel();
+            //Level Last
+            LevelLast last = new LevelLast();
+            last.PlayLevel();
 
-            ////Victory Screen
+            //Victory Screen
             VictoryScreen.PrintVictoryScreen();
 
-            ////// Victory Music
-            //Music victoryMusic = new Music();
-            //victoryMusic.Play(Music.VictoryTheme);
+            //// Victory Music
+            Music victoryMusic = new Music();
+            victoryMusic.Play(Music.VictoryTheme);
 
-            //if (Console.ReadKey(true).Key == ConsoleKey.N)
-            //{
-            //    victoryMusic.Stop(Music.VictoryTheme);
-            //}
+            if (Console.ReadKey(true).Key == ConsoleKey.N)
+            {
+                victoryMusic.Stop(Music.VictoryTheme);
+            }
 
-            //GameFrameBasics.PressEnter();
+            GameFrameBasics.PressEnter();
 
-            //Console.Clear();
-            //victoryMusic.Stop(Music.VictoryTheme);
+            Console.Clear();
+            victoryMusic.Stop(Music.VictoryTheme);
         }
     }
 }

@@ -1,4 +1,14 @@
-﻿using System;
+﻿// Shovel -     |D---(];
+// Shovel - 
+// _
+// V 
+// | 
+//_|_
+//\ /
+// ' 
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,6 +24,8 @@ namespace _01.Game_Frame
             GameFrameBasics.GameFrame();
             LevelStaticObjects();
             BeforeLast();
+
+            DisplayDialog.DisplayDialogInDialogBoard(LevelOneDialogs.levelOneDialogOne());
 
             // bool levelIsOver = false;
 
@@ -102,20 +114,6 @@ namespace _01.Game_Frame
             specialCoordsLevelBeforeLast.Add(grave.Key, grave.ObjectSpecialCoordinates);
             messagesSpecialLevelBeforeLast.Add(grave.Key, grave.MessageOnSpecial);
             objectsCoord.Add(grave.Key, grave.Coordinates);
-
-
-            //GameFrameBasics.PrintSymbol(44, 29, 'X', ConsoleColor.Red, ConsoleColor.Black);
-            //List<int> currCoordGrave = new List<int>();
-            //currCoordGrave.Add(44);
-            //currCoordGrave.Add(29);
-            //SpecialCoordinates.SelectSpecialCoordinates("grave", specialCoordsLevelBeforeLast, currCoordGrave);
-
-            //List<int> graveCoord = new List<int>();
-            //Dictionary<string, int> grave = new Dictionary<string, int>();
-            //grave.Add("col", 44);
-            //grave.Add("row", 29);
-            //forbiddenCoordsLevelBeforeLast.Add(grave);
-
         }
 
         // Objects coordinates

@@ -14,14 +14,11 @@ namespace _01.Game_Frame
                     @"Think yourself clever, huh? We'll see how clever you are once the master takes you to the torture chamber.",
                     @"Oh, yes, the torture chamber. You see, the master has the most refined methods of torturing his captives...",
                     @"Well, there are the torture racks, iron chairs and breaking wheels...",
-                    @"If you think you're very tough, we'll see how you'll fare with the Poena Finalis! That's not enough for you, eh? 
-                        But that's not the worst of it by far.",
-                    @"That's not what Poena Finalis is, you fool, no! ( He pauses for a bit and continues in a hushed voice.)
-                        He will make you decline Latin nouns!",
+                    @"If you think you're very tough, we'll see how you'll fare with the Poena Finalis! That's not enough for you, eh? But that's not the worst of it by far.",
+                    @"That's not what Poena Finalis is, you fool, no! ( He pauses for a bit and continues in a hushed voice.)He will make you decline Latin nouns!",
                     @"But wait! If it's not me, then it must be the master who put you here.",
                     @"Haha, do you mean to scare me, prisoner? It's you who will rot in this cell… ",
-                    @"Oh, I know better than to talk about the master. You will not trick me. The master will reveal himself to you 
-                        when he decides.",
+                    @"Oh, I know better than to talk about the master. You will not trick me. The master will reveal himself to you when he decides.",
                 });
 
             DialogOne.Add(
