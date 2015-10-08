@@ -30,8 +30,8 @@ namespace _01.Game_Frame
             music.Stop(Music.MusicTheme);
 
             //Level 1
-            //LevelOne one = new LevelOne();
-            //one.PlayLevel();
+            LevelOne one = new LevelOne();
+            one.PlayLevel();
 
 
             //Level BeforeLast
@@ -45,7 +45,7 @@ namespace _01.Game_Frame
             //Victory Screen
             VictoryScreen.PrintVictoryScreen();
 
-            //// Victory Music
+            // Victory Music
             Music victoryMusic = new Music();
             victoryMusic.Play(Music.VictoryTheme);
 
