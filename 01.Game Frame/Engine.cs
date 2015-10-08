@@ -55,9 +55,9 @@ namespace _01.Game_Frame
             beforeLast.PlayLevel();
 
 
-            //Level Last
-            //LevelLast last = new LevelLast();
-            //last.PlayLevel();
+            Level Last
+            LevelLast last = new LevelLast();
+            last.PlayLevel();
 
             ////Victory Screen
             //VictoryScreen.PrintVictoryScreen();

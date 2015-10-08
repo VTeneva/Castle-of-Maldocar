@@ -6,46 +6,25 @@ namespace _01.Game_Frame
 {
     class LevelLast
     {
-        ////sizes
-        //const int frameThickness = 1;
-        //const int gapThickness = 1;
-        //const int borderTopDownThickness = 3;
-        //const int borderSideThickness = 4;
-        //const int gameFieldLength = 42;
-        //const int gameFieldHeight = 35;
-
-        ////coordinates
-        //const int frameLeft = 0; //x
-        //const int frameTop = 4; //y
-        //const int gapLeft = frameLeft + frameThickness; //x
-        //const int gapTop = frameTop + frameThickness; //y
-        //const int borderLeft = gapLeft + gapThickness; //x
-        //const int borderTop = gapTop + gapThickness; //y
-        //const int gameFieldLeft = borderLeft + borderSideThickness; //x
-        //const int gameFieldTop = borderTop + borderTopDownThickness; //y
-        //const int gameFieldRight = gameFieldLeft + gameFieldLength - 1; //x
-        //const int gameFieldBottom = gameFieldTop + gameFieldHeight - 1; //y
-        //const int borderRight = gameFieldRight + borderSideThickness; //x
-        //const int borderBottom = gameFieldBottom + borderTopDownThickness; //y
-        //const int gapRight = borderRight + gapThickness; //x
-        //const int gapBottom = borderBottom + gapThickness; //y
-        //const int frameRight = gapRight + frameThickness; //x
-        //const int frameBottom = gapBottom + frameThickness; //y
 
         public void PlayLevel()
         {
             Console.Clear();
             Console.CursorVisible = false;
-            //GameFrameBasics.GameFrame();
+            GameFrameBasics.GameFrame();
 
-            //BossBattle();
-            Console.ReadKey();
+            while (!BossBattle())
+            {
+                GameOver();
+            }
         }
-/*
-        public void BossBattle()
+
+        public bool BossBattle()
         {
             Random rand = new Random();
             WriteBossBattleFrame();
+            int dragonLife = 25000;
+            int heroLife = 1000;
 
             GameCharacters.Dragon dragon = new GameCharacters.Dragon(0, 0, false, GC.gameFieldLeft, GC.gameFieldTop, GC.gameFieldRight, GC.gameFieldBottom - 10);
             GameCharacters.Hero hero = new GameCharacters.Hero(GC.gameFieldLength >> 1, GC.gameFieldBottom - GameCharacters.Hero.height + 1, true, GC.gameFieldLeft, GC.gameFieldTop, GC.gameFieldRight, GC.gameFieldBottom);
@@ -56,7 +35,7 @@ namespace _01.Game_Frame
                 CleanGameField();
 
                 dragon.Move();
-                
+
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo pressedKey = Console.ReadKey(true);
@@ -78,8 +57,9 @@ namespace _01.Game_Frame
                     }
                     else
                     {
-                        Console.SetCursorPosition(1, 1);
-                        Console.WriteLine("x");
+                        hero.DoNothing();
+                        if (pressedKey.Key == ConsoleKey.W) dragonLife = 0; //cheat
+                        if (pressedKey.Key == ConsoleKey.L) heroLife = 0; //cheat
                     }
                 }
                 else
@@ -90,6 +70,60 @@ namespace _01.Game_Frame
                 dragon.MoveFireballs();
                 dragon.CreateFireball(rand.Next(1, 4));
                 hero.MoveBullets();
+
+                int dragonDamageTaken = 0;
+                int heroDamageTaken = 0;
+                CheckForDamage(dragon, hero, ref dragonDamageTaken, ref heroDamageTaken, ref rand);
+                dragonLife -= dragonDamageTaken;
+                heroLife -= heroDamageTaken;
+                if (dragonLife < 0)
+                {
+                    dragonLife = 0;
+                }
+                if (heroLife < 0)
+                {
+                    heroLife = 0;
+                }
+                Console.ResetColor();
+                Console.SetCursorPosition(2, 1);
+                Console.WriteLine("Dragon Health: {0:00000} ", dragonLife);
+                Console.SetCursorPosition(2, 2);
+                Console.WriteLine("Hero Health: {0:0000} ", heroLife);
+
+                if (heroLife == 0)
+                {
+                    return false;
+                }
+                else if (dragonLife == 0)
+                {
+                    return true;
+                }
+            }
+        }
+
+        public void CheckForDamage(GameCharacters.Dragon dragon, GameCharacters.Hero hero, ref int dragonDamageTaken, ref int heroDamageTaken, ref Random rand)
+        {
+            for (int i = 0; i < dragon.fireballs.Count; i++)
+            {
+                if (hero.positionX + 1 <= dragon.fireballs[i].positionX && dragon.fireballs[i].positionX <= hero.positionX + 4)
+                {
+                    if (hero.positionY + 2 <= dragon.fireballs[i].positionY && dragon.fireballs[i].positionY <= hero.positionY + 4)
+                    {
+                        dragon.fireballs.RemoveAt(i);
+                        heroDamageTaken += rand.Next(1, 200 + 1); //Dragon Damage
+                    }
+                }
+            }
+            for (int i = 0; i < hero.bullets.Count; i++)
+            {
+                if (dragon.currentPositonX - 8 <= hero.bullets[i].positionX && hero.bullets[i].positionX <= dragon.currentPositonX + 8)
+                {
+                    if (dragon.currentPositonY - 2 <= hero.bullets[i].positionY && hero.bullets[i].positionY <= dragon.currentPositonY + 2)
+                    {
+                        hero.bullets.RemoveAt(i);
+                        dragonDamageTaken += rand.Next(50, 100 + 1); //Hero Damage
+                    }
+                }
             }
         }
 
@@ -177,6 +211,25 @@ namespace _01.Game_Frame
                 Console.SetCursorPosition(GC.gameFieldLeft, y);
                 Console.WriteLine(new string(' ', GC.gameFieldLength));
             }
-        }*/
+        }
+        public static void GameOver()
+        {
+            CleanGameField();
+            string text = "GAME OVER";
+            int x = GC.gameFieldLeft + (GC.gameFieldLength >> 1) - (text.Length>>1);
+            int y = GC.gameFieldTop + (GC.gameFieldHeight >> 2);
+            Console.SetCursorPosition(x, y);
+            Console.WriteLine(text);
+            text = "Press Enter to reply . . .";
+            x = GC.gameFieldLeft + (GC.gameFieldLength >> 1) - (text.Length >> 1);
+            y = y + 2;
+            Console.SetCursorPosition(x, y);
+            Console.WriteLine(text);
+            ConsoleKeyInfo pressedKey;
+            do
+            {
+                pressedKey = Console.ReadKey(true);
+            } while (pressedKey.Key!=ConsoleKey.Enter);
+        }
     }
 }
